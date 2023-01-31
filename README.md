@@ -1,2 +1,9 @@
-# StarWay
-Find the deepest secret from Star Wizard family!
+# StarWay/寻星之路
+找寻星之法师家族最深处的秘密！三渲二风格的解谜游戏，一切基于Unity URP（U门
+一些亮点（都还没做，别想了）：
+- 基于flow map和程序化建模的超酷星云
+- 程序化天空盒与闪烁的星空
+- 非常好看的可交互水
+- 非常可爱的主角
+- 非常棒的场景
+- 我至今还没想清楚的游戏玩法（我希望它超好玩
