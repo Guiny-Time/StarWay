@@ -1,13 +1,10 @@
-#if ENABLE_INPUT_SYSTEM
-using UnityEngine.InputSystem;
-#endif
-
 using UnityEngine;
 
 namespace UnityTemplateProjects
 {
     public class SimpleCameraController : MonoBehaviour
     {
+       
         class CameraState
         {
             public float yaw;
@@ -16,15 +13,14 @@ namespace UnityTemplateProjects
             public float x;
             public float y;
             public float z;
-
+            public Vector3 position = Vector3.zero;
+            public CharacterController controller;
             public void SetFromTransform(Transform t)
             {
                 pitch = t.eulerAngles.x;
                 yaw = t.eulerAngles.y;
                 roll = t.eulerAngles.z;
-                x = t.position.x;
-                y = t.position.y;
-                z = t.position.z;
+                controller.Move(t.position - position);
             }
 
             public void Translate(Vector3 translation)
