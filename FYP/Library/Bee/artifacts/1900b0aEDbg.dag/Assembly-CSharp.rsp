@@ -348,6 +348,7 @@
 "Assets/Scripts/Base/SingletonAutoMono.cs"
 "Assets/Scripts/Base/SingletonMono.cs"
 "Assets/Scripts/Base/SystemBase.cs"
+"Assets/Scripts/Enemy/EnemyMgr.cs"
 "Assets/Scripts/Map/MapMgr.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:8.0

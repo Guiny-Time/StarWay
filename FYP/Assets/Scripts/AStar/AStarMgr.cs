@@ -49,6 +49,7 @@ public class AStarMgr : BaseManager<AStarMgr>
         }else{
             Debug.Log("map data file not found");
         }
+        Debug.Log("init complete");
     }
 
     /// <summary>
