@@ -41,8 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+     <Compile Include="Assets\Scripts\Base\SingletonAutoMono.cs" />
+     <Compile Include="Assets\Scripts\Base\SystemBase.cs" />
+     <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
+     <Compile Include="Assets\Scripts\Base\SingletonMono.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\Base\BaseManager.cs" />
+     <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
+     <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.10f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

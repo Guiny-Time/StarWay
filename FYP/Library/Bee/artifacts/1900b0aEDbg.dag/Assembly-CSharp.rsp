@@ -341,7 +341,14 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/VSSettingsProvider.ref.dll"
-"Assets/Scripts/SimpleCameraController.cs"
+"Assets/Scripts/AStar/AStarMgr.cs"
+"Assets/Scripts/AStar/AStarNode.cs"
+"Assets/Scripts/Base/BaseManager.cs"
+"Assets/Scripts/Base/NewBehaviourScript.cs"
+"Assets/Scripts/Base/SingletonAutoMono.cs"
+"Assets/Scripts/Base/SingletonMono.cs"
+"Assets/Scripts/Base/SystemBase.cs"
+"Assets/Scripts/Map/MapMgr.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:8.0
 
