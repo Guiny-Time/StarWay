@@ -306,6 +306,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.10f1c1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"S:/gitHub/StarWay/FYP/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
 -r:"S:/gitHub/StarWay/FYP/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Mathematics.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Mathematics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.PlasticSCM.Editor.ref.dll"
@@ -350,7 +351,10 @@
 "Assets/Scripts/Base/SingletonMono.cs"
 "Assets/Scripts/Base/SystemBase.cs"
 "Assets/Scripts/Enemy/EnemyMgr.cs"
+"Assets/Scripts/Input/InputMgr.cs"
 "Assets/Scripts/Map/MapMgr.cs"
+"Assets/Scripts/Player/PlayerCtl.cs"
+"Assets/Scripts/Player/PlayerMgr.cs"
 -langversion:8.0
 
 /deterministic

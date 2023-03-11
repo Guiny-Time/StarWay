@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugin\QuickOutline\Scripts\Outline.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonAutoMono.cs" />
      <Compile Include="Assets\Scripts\Base\SystemBase.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
@@ -50,9 +51,10 @@
      <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Plugin\QuickOutline\Scripts\Outline.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMgr.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerCtl.cs" />
+     <Compile Include="Assets\Scripts\Input\InputMgr.cs" />
      <None Include="Assets\Plugin\QuickOutline\Resources\Shaders\OutlineMask.shader" />
-     <None Include="Assets\Materials\chapter 1\sdfOutline.shader" />
      <None Include="Assets\Plugin\QuickOutline\Readme.txt" />
      <None Include="Assets\Plugin\QuickOutline\Resources\Shaders\OutlineFill.shader" />
      <Reference Include="UnityEngine">
@@ -756,6 +758,10 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{734d906a-b6a3-9a61-2a51-34dd40c05163}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
