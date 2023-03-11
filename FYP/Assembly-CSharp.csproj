@@ -45,12 +45,16 @@
      <Compile Include="Assets\Scripts\Base\SystemBase.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonMono.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyMgr.cs" />
      <Compile Include="Assets\Scripts\Base\BaseManager.cs" />
      <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyMgr.cs" />
+     <Compile Include="Assets\Plugin\QuickOutline\Scripts\Outline.cs" />
+     <None Include="Assets\Plugin\QuickOutline\Resources\Shaders\OutlineMask.shader" />
+     <None Include="Assets\Materials\chapter 1\sdfOutline.shader" />
+     <None Include="Assets\Plugin\QuickOutline\Readme.txt" />
+     <None Include="Assets\Plugin\QuickOutline\Resources\Shaders\OutlineFill.shader" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.10f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
