@@ -42,18 +42,18 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Plugin\QuickOutline\Scripts\Outline.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerCtl.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonAutoMono.cs" />
      <Compile Include="Assets\Scripts\Base\SystemBase.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
+     <Compile Include="Assets\Scripts\Input\InputMgr.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonMono.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMgr.cs" />
      <Compile Include="Assets\Scripts\Base\BaseManager.cs" />
      <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerMgr.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerCtl.cs" />
-     <Compile Include="Assets\Scripts\Input\InputMgr.cs" />
      <None Include="Assets\Plugin\QuickOutline\Resources\Shaders\OutlineMask.shader" />
      <None Include="Assets\Plugin\QuickOutline\Readme.txt" />
      <None Include="Assets\Plugin\QuickOutline\Resources\Shaders\OutlineFill.shader" />
@@ -293,6 +293,9 @@
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>S:/gitHub/StarWay/FYP/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="clipper_library">
+     <HintPath>S:/gitHub/StarWay/FYP/Library/PackageCache/com.unity.cinemachine@2.7.9/Runtime/ThirdParty/clipper_library.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.10f1c1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -755,6 +758,12 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>S:/gitHub/StarWay/FYP/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>S:/gitHub/StarWay/FYP/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>S:/gitHub/StarWay/FYP/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
