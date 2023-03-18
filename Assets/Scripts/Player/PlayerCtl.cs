@@ -12,6 +12,7 @@ public class PlayerCtl : MonoBehaviour
 
     private GameObject pos;
     private List<AStarNode> result = new List<AStarNode>();
+    private List<AStarNode> temp_result = new List<AStarNode>();
     private GameObject highlightBlocks = null;
     private bool moveState = false; //false: stand; true: moving
     private int stepCount = 1;  // foot step
@@ -33,24 +34,24 @@ public class PlayerCtl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!moveState)
-        {
+        //if (!moveState)
+        //{
             ChooseBlock();
-        }
+        //}
         if(moveState)
         {
             Moving();
         }
         if(Input.GetMouseButtonDown(0))
         {
+            temp_result = result;
             moveState = true;
         }   
     }
 
     private void OnClick()
     {
-        moveState = true;
-        if (moveState)
+        while (moveState)
         {
             Moving();
         }
@@ -102,7 +103,7 @@ public class PlayerCtl : MonoBehaviour
 
     void Moving()
     {
-        Vector3 NextPos = new Vector3(result[stepCount].y, 0.25f, result[stepCount].x);
+        Vector3 NextPos = new Vector3(temp_result[stepCount].y, 0.25f, temp_result[stepCount].x);
         if(transform.position == NextPos){ 
             print("currentCount" + stepCount);
             stepCount++;
