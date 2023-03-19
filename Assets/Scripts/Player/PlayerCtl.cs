@@ -34,27 +34,20 @@ public class PlayerCtl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!moveState)
-        //{
-            ChooseBlock();
-        //}
+        ChooseBlock();
         if(moveState)
         {
             Moving();
         }
         if(Input.GetMouseButtonDown(0))
         {
-            temp_result = result;
-            moveState = true;
+            if (result.Count != 0)
+            {
+                temp_result = result;
+                stepCount = 0; 
+                moveState = true;
+            }
         }   
-    }
-
-    private void OnClick()
-    {
-        while (moveState)
-        {
-            Moving();
-        }
     }
 
     /// <summary>
@@ -65,7 +58,7 @@ public class PlayerCtl : MonoBehaviour
         pos = InputMgr.GetInstance().GetCurrentMouse();
         try
         {
-            result = AStarMgr.GetInstance().FindPath(new Vector2(transform.position.z, transform.position.x),new Vector2(pos.transform.position.z,pos.transform.position.x));
+            result = AStarMgr.GetInstance().FindPath(new Vector2( Mathf.Round(transform.position.z), Mathf.Round(transform.position.x)),new Vector2(pos.transform.position.z,pos.transform.position.x));
             if (result == null)
             {
                 highlightBlocks.GetComponent<Outline>().enabled = false;
@@ -95,8 +88,6 @@ public class PlayerCtl : MonoBehaviour
         }
         catch (Exception e)
         {
-            // pos.GetComponent<Outline>().enabled = false;
-            // highlightBlocks.GetComponent<Outline>().enabled = false;
             lr.SetVertexCount(0);
         }
     }
@@ -104,13 +95,11 @@ public class PlayerCtl : MonoBehaviour
     void Moving()
     {
         Vector3 NextPos = new Vector3(temp_result[stepCount].y, 0.25f, temp_result[stepCount].x);
-        if(transform.position == NextPos){ 
-            print("currentCount" + stepCount);
+        if(transform.position == NextPos){
             stepCount++;
-            if(stepCount + 1 > result.Count)
+            if(stepCount + 1 > temp_result.Count)
             {
                 moveState = false;
-                stepCount = 0; 
             }
         }
         else

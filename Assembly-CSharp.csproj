@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
      <Compile Include="Assets\Scripts\Input\InputMgr.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyCh1.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonMono.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMgr.cs" />
      <Compile Include="Assets\Scripts\Base\BaseManager.cs" />
@@ -60,9 +61,11 @@
      <Folder Include="Assets\Plugin\QuickOutline\Resources\Materials" />
      <Folder Include="Assets\Materials" />
      <Folder Include="Assets\Presets\Defaults" />
+     <Folder Include="Assets\Models\low-poly-robot" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\Save" />
      <None Include="Assets\Plugin\QuickOutline\Resources\Shaders\OutlineMask.shader" />
+     <Folder Include="Assets\Models" />
      <Folder Include="Assets\Scripts\Base" />
      <Folder Include="Assets\Scripts\Map" />
      <Folder Include="Assets\Presets" />
@@ -72,6 +75,7 @@
      <Folder Include="Assets\Plugin\Polybrush Data\Brush Settings" />
      <Folder Include="Assets\Scripts\Player" />
      <Folder Include="Assets\Scripts\Enemy" />
+     <Folder Include="Assets\Models\low-poly-robot\source" />
      <None Include="Assets\Plugin\QuickOutline\Readme.txt" />
      <Folder Include="Assets\Plugin\QuickOutline\Resources\Shaders" />
      <Folder Include="Assets\Scripts\Block" />
