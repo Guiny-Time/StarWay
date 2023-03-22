@@ -79,6 +79,7 @@
      <None Include="Assets\Plugin\QuickOutline\Readme.txt" />
      <Folder Include="Assets\Plugin\QuickOutline\Resources\Shaders" />
      <Folder Include="Assets\Scripts\Block" />
+     <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Plugin\QuickOutline\Scripts" />
      <Folder Include="Assets\Scripts\UISys" />
      <Folder Include="Assets\Materials\chapter 1" />
