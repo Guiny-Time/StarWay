@@ -53,6 +53,17 @@ public class AStarMgr : BaseManager<AStarMgr>
     }
 
     /// <summary>
+    /// 获得格子状态数据
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="z"></param>
+    /// <returns></returns>
+    public int GetBlockState(float x, float z)
+    {
+        return nodes[(int)z, (int)x].type;
+    }
+
+    /// <summary>
     /// 寻路方法 提供给外部使用
     /// </summary>
     /// <param name="startPos"></param>

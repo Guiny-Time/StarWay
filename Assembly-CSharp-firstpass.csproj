@@ -41,19 +41,30 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\QuickOutline\Scripts\Outline.cs" />
      <Compile Include="Assets\Plugins\VectrosityDemos\ImageEffects\Scripts\PostEffectsBase.cs" />
      <Compile Include="Assets\Plugins\VectrosityDemos\ImageEffects\Scripts\BloomOptimized.cs" />
+     <Folder Include="Assets\Plugins\QuickOutline" />
+     <Folder Include="Assets\Plugins\QuickOutline\Resources" />
+     <Folder Include="Assets\Plugins\QuickOutline\Resources\Materials" />
      <Folder Include="Assets\Plugins\VectrosityDemos\ImageEffects\Shaders" />
+     <None Include="Assets\Plugins\QuickOutline\Resources\Shaders\OutlineMask.shader" />
      <Folder Include="Assets\Plugins\VectrosityDemos" />
+     <Folder Include="Assets\Plugins\Polybrush Data" />
      <Folder Include="Assets\Plugins\VectrosityDemos\ImageEffects" />
      <Folder Include="Assets\Plugins\VectrosityDemos\ImageEffects\Shaders\_BloomAndFlares" />
+     <Folder Include="Assets\Plugins\Polybrush Data\Brush Settings" />
      <Folder Include="Assets\Plugins\VectrosityDemos\Light Flares\Sources" />
      <None Include="Assets\Plugins\VectrosityDemos\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
      <Folder Include="Assets\Plugins\VectrosityDemos\Light Flares" />
+     <None Include="Assets\Plugins\QuickOutline\Readme.txt" />
      <Folder Include="Assets\Plugins" />
      <Folder Include="Assets\Plugins\VectrosityDemos\Light Flares\Sources\Textures" />
+     <Folder Include="Assets\Plugins\QuickOutline\Resources\Shaders" />
      <Folder Include="Assets\Plugins\VectrosityDemos\Light Flares\Sources\Materials" />
+     <Folder Include="Assets\Plugins\QuickOutline\Scripts" />
      <Folder Include="Assets\Plugins\VectrosityDemos\ImageEffects\Scripts" />
+     <None Include="Assets\Plugins\QuickOutline\Resources\Shaders\OutlineFill.shader" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
