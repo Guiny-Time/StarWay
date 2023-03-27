@@ -19,6 +19,5 @@ public class EnemyCh1 : EnemyMgr
             print("find player!");
         }
 
-        
     }
 }
