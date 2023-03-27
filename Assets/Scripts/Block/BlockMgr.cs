@@ -35,11 +35,17 @@ public class BlockMgr : BaseManager<BlockMgr>
     /// <summary>
     /// 重力魔法修改当前方块的状态，并移动方块纵向位置
     /// </summary>
-    public void UseGravityMagic(int state)
+    public void UseGravityMagic(GameObject block, int state)
     {
         if (state == 1)
         {
-            
+            block.transform.position += new Vector3(0,1,0);
+            AStarMgr.GetInstance().ChangeBlockState(block.transform.position.x, block.transform.position.z,0);
+        }
+        else
+        {
+            block.transform.position -= new Vector3(0,1,0);
+            AStarMgr.GetInstance().ChangeBlockState(block.transform.position.x, block.transform.position.z,1);
         }
     }
 }

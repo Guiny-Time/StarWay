@@ -57,7 +57,13 @@ public class PlayerCtl : MonoBehaviour
             if(Input.GetMouseButtonDown(0))
             {
                 print("对该方块施展重力魔法：" + pos.name);
+                GameObject block = InputMgr.GetInstance().GetCurrentMouse();
+                BlockCtl bCtl = block.GetComponent<BlockCtl>();
+                int blockState = bCtl.GetState();
                 // gravity magic
+                BlockMgr.GetInstance().UseGravityMagic(block, blockState);
+                bCtl.SetState(1^blockState);
+                print(1^blockState);
                 inMagic = false;
             }
 

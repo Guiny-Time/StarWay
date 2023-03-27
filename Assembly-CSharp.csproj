@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Block\BlockMgr.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCtl.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonAutoMono.cs" />
      <Compile Include="Assets\Scripts\Base\SystemBase.cs" />
@@ -49,13 +50,12 @@
      <Compile Include="Assets\Scripts\Input\InputMgr.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyCh1.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonMono.cs" />
+     <Compile Include="Assets\Scripts\Block\BlockCtl.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMgr.cs" />
      <Compile Include="Assets\Scripts\Base\BaseManager.cs" />
      <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Scripts\Block\BlockMgr.cs" />
-     <Compile Include="Assets\Scripts\Block\BlockCtl.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Materials" />
      <Folder Include="Assets\Presets\Defaults" />

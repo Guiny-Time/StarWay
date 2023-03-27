@@ -17,20 +17,27 @@ public class BlockCtl : MonoBehaviour
         offset = BlockMgr.GetInstance().NextDouble(0,1);
         InitBlocks();
     }
-
-
+    
     void InitBlocks()
     {
-        
-        Vector3 oldPos = transform.position;
         // 可通行地面
         if (state == 1)
         {
-            transform.position = new Vector3(oldPos.x, oldPos.y - (float)offset * 0.1f, oldPos.z);
+            transform.position -= new Vector3(0, (float)offset * 0.2f, 0);
         }
         else
         {
-            transform.position = new Vector3(oldPos.x, oldPos.y + (float)offset * 0.5f, oldPos.z);
+            transform.position += new Vector3(0, (float)offset * 0.5f, 0);
         }
+    }
+    
+    public int GetState()
+    {
+        return state;
+    }
+
+    public void SetState(int s)
+    {
+        state = s;
     }
 }
