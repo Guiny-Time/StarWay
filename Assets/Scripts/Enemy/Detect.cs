@@ -14,10 +14,16 @@ public class Detect : ActionNode
     protected override void OnStart() {
     }
 
-    protected override void OnStop() {
+    protected override void OnStop()
+    {
+        ChangeColor();
     }
 
     protected override State OnUpdate() {
+        if (DetectPlayer())
+        {
+            return State.Success;
+        }
         return State.Failure;
     }
     
@@ -26,7 +32,6 @@ public class Detect : ActionNode
         if (GenerateRay(0))
         {
             return true;
-            
         }
         for (int i = 1; i < precision; i++)
         {
@@ -50,5 +55,15 @@ public class Detect : ActionNode
 
         return false;
 
+    }
+
+    public void ChangeColor()
+    {
+        var transform = context.transform;
+        GameObject attack = transform.GetChild(transform.childCount - 1).gameObject;
+        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
+        materials[0] = Resources.Load("find") as Material;
+        materials[1] = Resources.Load("find_b") as Material;
+        attack.GetComponent<MeshRenderer>().materials = materials;
     }
 }

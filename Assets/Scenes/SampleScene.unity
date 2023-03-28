@@ -481,6 +481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dummy_test (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 10351cdfa0a18b34294719b46375b9b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10351cdfa0a18b34294719b46375b9b7, type: 3}
 --- !u!1 &46288143
@@ -2937,16 +2941,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 342609071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a3ab5137cd1f64a8d6c97ec12904e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: 2, y: 3}
-  endPoint: {x: 5, y: 3}
-  speed: 1.5
-  precision: 4
-  angle: 45
-  radius: 2.5
-  attack: {fileID: 363486645}
+  tree: {fileID: 11400000, guid: ec5af96419acd094ba1d21bb7fa8610f, type: 2}
 --- !u!1 &361296989
 GameObject:
   m_ObjectHideFlags: 0
@@ -13543,7 +13541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: ec5af96419acd094ba1d21bb7fa8610f, type: 2}
+  tree: {fileID: 11400000, guid: 03eb4fabe639a3b48891fd5cef046a12, type: 2}
 --- !u!1 &1803260733
 GameObject:
   m_ObjectHideFlags: 0

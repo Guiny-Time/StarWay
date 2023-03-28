@@ -19,7 +19,7 @@ public class MoveBack : ActionNode
     private int count = 0;
     protected override void OnStart() {
         var transform = context.transform;
-        startPoint = new Vector2(transform.position.z, transform.position.x);
+        startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         attack = transform.GetChild(transform.childCount - 1).gameObject;
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
     }

@@ -10,12 +10,6 @@ public class Move : ActionNode
     private Vector2 temp;
     // 速度
     public float speed;
-    // 检测精度
-    public int precision = 1;
-    // 检测角度
-    public int angle;
-    // 半径
-    public float radius;
     // 攻击范围obj
     public GameObject attack;
 
@@ -26,7 +20,6 @@ public class Move : ActionNode
     protected override void OnStart() {
         var transform = context.transform;
         attack = transform.GetChild(transform.childCount - 1).gameObject;
-        Debug.Log(attack.name);
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
     }
 

@@ -13,11 +13,6 @@ public class EnemyCh1 : EnemyMgr
     // Update is called once per frame
     void Update()
     {
-        EnermyMoveing();
-        if (DetectPlayer())
-        {
-            print("find player!");
-        }
 
     }
 }

@@ -63,7 +63,6 @@ public class PlayerCtl : MonoBehaviour
                 // gravity magic
                 BlockMgr.GetInstance().UseGravityMagic(block, blockState);
                 bCtl.SetState(1^blockState);
-                print(1^blockState);
                 inMagic = false;
             }
 

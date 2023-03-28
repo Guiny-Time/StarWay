@@ -1,32 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7917430627428424504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c06aca37b08794daa5804fef01c30a, type: 3}
-  m_Name: Move
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 6191cb2e48fd15040888aa60292dfd2a
-  position: {x: 304.2975, y: 152}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  drawGizmos: 0
-  startPoint: {x: 6, y: 5}
-  endPoint: {x: 6, y: 11}
-  speed: 1.5
-  precision: 4
-  angle: 45
-  radius: 2.5
-  attack: {fileID: 0}
 --- !u!114 &-4744259994293432426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,9 +63,9 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  precision: 1
-  angle: 0
-  radius: 0
+  precision: 4
+  angle: 45
+  radius: 2.5
 --- !u!114 &-2466464588330516849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,11 +102,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f5bb381a8f2521f44a3e258336fcdd6a
-  position: {x: -216.79997, y: 326.4}
+  position: {x: -217.6, y: 326.39996}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
+  startPoint: {x: 0, y: 0}
+  endPoint: {x: 0, y: 0}
+  speed: 1.5
 --- !u!114 &-1381181118382598817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +125,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a167b6becc5241e4aae4f26148374a15
-  position: {x: 7.999836, y: 151.99995}
+  position: {x: 8, y: 152}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -190,7 +166,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: E_Ch1
+  m_Name: E_Ch1_B
   m_EditorClassIdentifier: 
   rootNode: {fileID: -2466464588330516849}
   treeState: 0
@@ -200,11 +176,11 @@ MonoBehaviour:
   - {fileID: 2812328631599928220}
   - {fileID: 1688398309857585670}
   - {fileID: -1381181118382598817}
-  - {fileID: -7917430627428424504}
   - {fileID: -3308232261024424352}
   - {fileID: -1922455962893373445}
   - {fileID: -3642766428777185881}
   - {fileID: -4744259994293432426}
+  - {fileID: 3641439143675013847}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1688398309857585670
@@ -253,4 +229,28 @@ MonoBehaviour:
   children:
   - {fileID: 1688398309857585670}
   - {fileID: -1381181118382598817}
-  - {fileID: -7917430627428424504}
+  - {fileID: 3641439143675013847}
+--- !u!114 &3641439143675013847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c06aca37b08794daa5804fef01c30a, type: 3}
+  m_Name: Move
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b24d8101d1009094abe40ceb24a1b58e
+  position: {x: 265.66846, y: 151.99998}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  startPoint: {x: 6, y: 5}
+  endPoint: {x: 6, y: 11}
+  speed: 1.5
+  attack: {fileID: 0}
