@@ -41,12 +41,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeSettings.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\InspectorView.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeEditor.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\DoubleClickSelection.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeView.cs" />
+     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\InspectorView.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\NodeView.cs" />
+     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\DoubleClickSelection.cs" />
+     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeEditor.cs" />
+     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeSettings.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\SplitView.cs" />
      <Folder Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor" />
      <Reference Include="UnityEngine">

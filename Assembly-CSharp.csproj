@@ -56,6 +56,11 @@
      <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Move.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Detect.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Chase.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Alumb.cs" />
+     <Compile Include="Assets\Scripts\Enemy\MoveBack.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Materials" />
      <Folder Include="Assets\Presets\Defaults" />
