@@ -45,7 +45,7 @@ public class PlayerCtl : MonoBehaviour
         
         if(moveState) { Moving(); }     // moving
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             print("开始使用重力魔法");
             inMagic = true;

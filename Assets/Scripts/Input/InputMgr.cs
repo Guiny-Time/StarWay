@@ -9,25 +9,27 @@ public class InputMgr : BaseManager<InputMgr>
     private Ray ray;
     private RaycastHit hit;
     private GameObject mapCollider;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void UIListener()
     {
-        if (Input.GetKeyDown("Esc"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             // 弹出UI
+            Debug.Log("弹出设置界面");
             // Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // 暂停
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
 
     }
