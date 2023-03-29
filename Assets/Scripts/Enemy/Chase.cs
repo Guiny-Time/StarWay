@@ -11,6 +11,8 @@ public class Chase : ActionNode
     private Vector2 temp;
     // 速度
     public float speed;
+    // 追击半径
+    public float radius;
 
     private GameObject player;
 
@@ -21,8 +23,8 @@ public class Chase : ActionNode
     protected override void OnStart() {
         var transform = context.transform;
         player = GameObject.FindWithTag("Player");
-        startPoint = new Vector2(Mathf.Floor(transform.position.z), Mathf.Floor(transform.position.x));
-        endPoint = new Vector2(Mathf.Ceil(player.transform.position.z), Mathf.Ceil(player.transform.position.x));
+        startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
+        endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
     }
 
@@ -31,15 +33,21 @@ public class Chase : ActionNode
 
     protected override State OnUpdate() {
         var transform = context.transform;
-        startPoint = new Vector2(Mathf.Ceil(transform.position.z), Mathf.Ceil(transform.position.x));
-        endPoint = new Vector2(Mathf.Floor(player.transform.position.z), Mathf.Floor(player.transform.position.x));
+        startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
+        endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
-        MoveGameObject();
+
         if (Vector3.Distance(transform.position, player.transform.position) <= 1)
         {
             SceneManager.LoadScene(0,LoadSceneMode.Single);
             // return State.Failure;
         }
+
+        if (Vector3.Distance(transform.position, player.transform.position) > radius)
+        {
+            return State.Failure;
+        }
+        MoveGameObject();
         return State.Running;
     }
     

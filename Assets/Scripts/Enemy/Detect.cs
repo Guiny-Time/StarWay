@@ -11,7 +11,9 @@ public class Detect : ActionNode
     public int angle;
     // 半径
     public float radius;
+    private GameObject player;
     protected override void OnStart() {
+        player = GameObject.FindWithTag("Player");
     }
 
     protected override void OnStop()
