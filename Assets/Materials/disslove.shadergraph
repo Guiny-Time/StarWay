@@ -116,7 +116,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "01ad4a888e524288aa27852d9ae66d91"
+                    "m_Id": "07c2bbd5ec7e4a4bb0e0f6c9609841cc"
                 },
                 "m_SlotId": 0
             }
@@ -1140,11 +1140,11 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": -0.5,
+    "m_Value": -0.5299999713897705,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": -1.0,
-        "y": 0.5
+        "y": -0.5
     }
 }
 
