@@ -15,7 +15,7 @@ F:/github/StarWay/FYP
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56377
+56599
 Successfully changed project path to: F:/github/StarWay/FYP
 F:/github/StarWay/FYP
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ F:/github/StarWay/FYP
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [24392] Host "[IP] 192.168.43.126 [Port] 0 [Flags] 2 [Guid] 2575077938 [EditorId] 2575077938 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-F9NA1RP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [18368] Host "[IP] 192.168.0.110 [Port] 0 [Flags] 2 [Guid] 281331020 [EditorId] 281331020 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-F9NA1RP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [24392] Host "[IP] 192.168.43.126 [Port] 0 [Flags] 2 [Guid] 2575077938 [EditorId] 2575077938 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-F9NA1RP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [18368] Host "[IP] 192.168.0.110 [Port] 0 [Flags] 2 [Guid] 281331020 [EditorId] 281331020 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-F9NA1RP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 AS: AutoStreaming module initializing.
-Refreshing native plugins compatible for Editor in 361.76 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 200.48 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.20f1c1 (7cf0fbd73406)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/Resources/UnitySubsystems
@@ -68,7 +68,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56968
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56844
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
@@ -78,7 +78,7 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.20f1c
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.20f1c1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.194534 seconds.
+Registered in 0.102432 seconds.
 Native extension for UWP target not found
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
@@ -86,42 +86,42 @@ Native extension for WindowsStandalone target not found
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 886 ms
+Android Extension - Scanning For ADB Devices 615 ms
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 244.35 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 179.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.624 seconds
+- Completed reload, in  2.249 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3625ms)
-		BeginReloadAssembly (437ms)
+	ReloadAssembly (2249ms)
+		BeginReloadAssembly (278ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (2489ms)
-			LoadAssemblies (422ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1616ms)
+			LoadAssemblies (257ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (396ms)
+			SetupTypeCache (195ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (61ms)
-			SetupLoadedEditorAssemblies (1752ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (1233ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (1191ms)
+				InitializePlatformSupportModulesInManaged (834ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (245ms)
-				BeforeProcessingInitializeOnLoad (3ms)
-				ProcessInitializeOnLoadAttributes (204ms)
-				ProcessInitializeOnLoadMethodAttributes (108ms)
+				RefreshPlugins (180ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (140ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.043938 seconds.
+Registered in 0.041748 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image F:\github\StarWay\FYP\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image F:\github\StarWay\FYP\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -132,46 +132,46 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 260.54 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 172.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.559 seconds
+- Completed reload, in  2.640 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3562ms)
-		BeginReloadAssembly (401ms)
+	ReloadAssembly (2641ms)
+		BeginReloadAssembly (315ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
+			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (2851ms)
-			LoadAssemblies (370ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (2066ms)
+			LoadAssemblies (287ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (690ms)
+			SetupTypeCache (469ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (156ms)
-			SetupLoadedEditorAssemblies (1543ms)
+			RebuildScriptCaches (103ms)
+			SetupLoadedEditorAssemblies (1150ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (162ms)
+				InitializePlatformSupportModulesInManaged (114ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (261ms)
-				BeforeProcessingInitializeOnLoad (305ms)
-				ProcessInitializeOnLoadAttributes (567ms)
-				ProcessInitializeOnLoadMethodAttributes (152ms)
-				AfterProcessingInitializeOnLoad (95ms)
+				RefreshPlugins (173ms)
+				BeforeProcessingInitializeOnLoad (244ms)
+				ProcessInitializeOnLoadAttributes (427ms)
+				ProcessInitializeOnLoadMethodAttributes (112ms)
+				AfterProcessingInitializeOnLoad (79ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (26ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
-Refreshing native plugins compatible for Editor in 1.86 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 1.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5430 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 47 unused Assets / (0.9 MB). Loaded Objects now: 5888.
 Memory consumption went from 226.1 MB to 225.2 MB.
-Total: 5.121400 ms (FindLiveObjects: 0.507500 ms CreateObjectMapping: 0.531200 ms MarkObjects: 3.566600 ms  DeleteObjects: 0.515100 ms)
+Total: 6.695700 ms (FindLiveObjects: 0.515600 ms CreateObjectMapping: 0.557600 ms MarkObjects: 5.129200 ms  DeleteObjects: 0.491500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -185,7 +185,43 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 104534.552825 seconds.
+  Time since last request: 161302.870107 seconds.
   path: Assets/Materials/disslove.mat
   artifactKey: Guid(ab5456b236269e847b07057eea35a6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/disslove.mat using Guid(ab5456b236269e847b07057eea35a6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f23990e800159d4a63c311d5ebcf773') in 0.620143 seconds 
+Start importing Assets/Materials/disslove.mat using Guid(ab5456b236269e847b07057eea35a6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e876436345dd13e932968a745a5ca671') in 0.359535 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1123.970131 seconds.
+  path: Assets/Materials/noise.png
+  artifactKey: Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/noise.png using Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb3f609fa5953e567cf0658ce7ebb987') in 0.391516 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.596872 seconds.
+  path: Assets/Materials/noise.png
+  artifactKey: Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/noise.png using Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2676dd74899fba6e1a41a65ba6bc2ffd') in 0.287457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 82.690797 seconds.
+  path: Assets/Materials/noise.png
+  artifactKey: Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/noise.png using Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cd6556d07e5f481a82023f6679968ce') in 0.270782 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.849891 seconds.
+  path: Assets/Materials/noise.png
+  artifactKey: Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/noise.png using Guid(da18cc848fe804945b876190856aeda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53396549508ed904c87fa51fac83121d') in 0.274099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 98.446254 seconds.
+  path: Assets/Materials/disslove.mat
+  artifactKey: Guid(ab5456b236269e847b07057eea35a6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/disslove.mat using Guid(ab5456b236269e847b07057eea35a6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18b94947b3f071901ae9f75c9cd59362') in 0.018798 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1049.130751 seconds.
+  path: Assets/Materials/disslove.mat
+  artifactKey: Guid(ab5456b236269e847b07057eea35a6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/disslove.mat using Guid(ab5456b236269e847b07057eea35a6a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc363827341ce663bd4b88f08cce52c7') in 0.028038 seconds 
