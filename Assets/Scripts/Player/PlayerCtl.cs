@@ -8,8 +8,6 @@ public class PlayerCtl : MonoBehaviour
 {
     public int speed;
     public int magic;
-    public LineRenderer lr;
-
     
     private List<AStarNode> result = new List<AStarNode>();
     private List<AStarNode> temp_result = new List<AStarNode>();
@@ -36,7 +34,10 @@ public class PlayerCtl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        InputMgr.GetInstance().UIListener(result);
+        
         ChooseBlock();
+        
         if (pos != null)
         {
             result = AStarMgr.GetInstance().FindPath(new Vector2( Mathf.Round(transform.position.z), Mathf.Round(transform.position.x)),
@@ -45,36 +46,13 @@ public class PlayerCtl : MonoBehaviour
         
         if(moveState) { Moving(); }     // moving
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (InputMgr.GetInstance().GetMagicState())
         {
-            print("开始使用重力魔法");
-            inMagic = true;
-            GravityMagic();
-        }
-
-        if (inMagic)
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                print("对该方块施展重力魔法：" + pos.name);
-                GameObject block = InputMgr.GetInstance().GetCurrentMouse();
-                BlockCtl bCtl = block.GetComponent<BlockCtl>();
-                int blockState = bCtl.GetState();
-                // gravity magic
-                BlockMgr.GetInstance().UseGravityMagic(block, blockState);
-                bCtl.SetState(1^blockState);
-                inMagic = false;
-            }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                print("退出施法状态");
-                inMagic = false;
-            }
+            InputMgr.GetInstance().InMagic();
         }
         else
         {
-            DrawLine();
+            InputMgr.GetInstance().DrawLine(result);
             if(Input.GetMouseButtonDown(0))
             {
                 if (result.Count != 0)
@@ -85,37 +63,6 @@ public class PlayerCtl : MonoBehaviour
                 }
             }
         }
-    }
-
-    /// <summary>
-    /// 使用重力魔法
-    /// </summary>
-    void GravityMagic()
-    {
-        pos = InputMgr.GetInstance().GetCurrentMouse();
-        // clear highlight
-        if (highlightBlocks != null)
-        {
-            highlightBlocks.GetComponent<Outline>().enabled = false;
-        }
-        highlightBlocks = null;
-        lr.positionCount = 0;
-        
-        if (pos.GetComponent<Outline>())
-        {
-            if (highlightBlocks != null && pos.name != highlightBlocks.name)
-            {
-                highlightBlocks.GetComponent<Outline>().enabled = false;
-                highlightBlocks = pos;
-                highlightBlocks.GetComponent<Outline>().enabled = true;
-            }
-            else
-            {
-                highlightBlocks = pos;
-                highlightBlocks.GetComponent<Outline>().enabled = true;
-            }
-        }
-        
     }
 
     /// <summary>
@@ -151,30 +98,7 @@ public class PlayerCtl : MonoBehaviour
             return;
         }
     }
-
-    /// <summary>
-    /// 画线，用于展示自动寻路路线
-    /// </summary>
-    void DrawLine()
-    {
-        if (result == null)
-        {
-            lr.positionCount = 0;
-        }
-        try
-        {
-            lr.positionCount = result.Count;
-            for (int i = 0; i < result.Count; i++)
-            {
-                lr.SetPosition(i, new Vector3(result[i].y, 0, result[i].x));
-            }
-        }
-        catch (Exception e)
-        {
-            lr.positionCount = 0;
-        }
-        
-    }
+    
 
     void Moving()
     {

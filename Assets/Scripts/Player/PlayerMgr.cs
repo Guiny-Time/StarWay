@@ -44,4 +44,6 @@ public class PlayerMgr : BaseManager<PlayerMgr>
     {
         return AStarMgr.GetInstance().FindPath(start, end);
     }
+    
+    
 }
