@@ -58,7 +58,7 @@ public class PlayerCtl : MonoBehaviour
                 if (result.Count != 0)
                 {
                     temp_result = result;
-                    stepCount = 0; 
+                    stepCount = 1; 
                     moveState = true;
                 }
             }
@@ -116,6 +116,5 @@ public class PlayerCtl : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, NextPos, speed * Time.deltaTime);
         }
         
-
     }
 }
