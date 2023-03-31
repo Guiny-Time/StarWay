@@ -15,12 +15,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a30ea6c0659cc4846a1fd9e3d93cfdf6
-  position: {x: 83.2, y: 326.4}
+  position: {x: -40.42189, y: 515.2615}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  endPoint: {x: 6, y: 11}
+  endPoint: {x: 6, y: 5}
   speed: 1.5
   attack: {fileID: 0}
 --- !u!114 &-3642766428777185881
@@ -38,11 +38,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a0f89cdae0b82164092241775365780f
-  position: {x: -67.19999, y: 326.39996}
+  position: {x: -222.82184, y: 515.2615}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
+  startPoint: {x: 0, y: 0}
+  endPoint: {x: 0, y: 0}
+  speed: 1.5
 --- !u!114 &-3308232261024424352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +129,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a167b6becc5241e4aae4f26148374a15
-  position: {x: 8, y: 152}
+  position: {x: -147.6218, y: 340.86145}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -182,7 +185,6 @@ MonoBehaviour:
   - {fileID: -3642766428777185881}
   - {fileID: -4744259994293432426}
   - {fileID: 3641439143675013847}
-  - {fileID: 3400737212894333395}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1688398309857585670
@@ -232,29 +234,6 @@ MonoBehaviour:
   - {fileID: 1688398309857585670}
   - {fileID: -1381181118382598817}
   - {fileID: 3641439143675013847}
---- !u!114 &3400737212894333395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871579c982ef37f44882c0a2d087dd67, type: 3}
-  m_Name: MoveBack
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 03a9a711c962c304480d7ca37f331e32
-  position: {x: -217.59996, y: 326.4}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  drawGizmos: 0
-  endPoint: {x: 6, y: 5}
-  speed: 1.5
-  attack: {fileID: 0}
 --- !u!114 &3641439143675013847
 MonoBehaviour:
   m_ObjectHideFlags: 0

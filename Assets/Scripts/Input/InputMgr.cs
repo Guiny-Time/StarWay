@@ -13,11 +13,11 @@ public class InputMgr : SingletonMono<InputMgr>
     public Material magicMat;
     public LineRenderer lr;
     
-    protected Vector3 mousePosition;
+    private Vector3 mousePosition;
     private Ray ray;
     private RaycastHit hit;
     private GameObject mapCollider;
-    private GameObject pos; // mouse choose obj
+    private GameObject chooseObj; // mouse choose obj
     private GameObject highlightBlocks = null;
     private bool inMagic;   // whether in magic state
 
@@ -84,12 +84,13 @@ public class InputMgr : SingletonMono<InputMgr>
     {
         if(Input.GetMouseButtonDown(0))
         {
-            print("对该方块施展重力魔法：" + pos.name);
+            print("对该方块施展重力魔法：" + chooseObj.name);
             GameObject block = InputMgr.GetInstance().GetCurrentMouse();
             BlockCtl bCtl = block.GetComponent<BlockCtl>();
             int blockState = bCtl.GetState();
             // gravity magic
             BlockMgr.GetInstance().UseGravityMagic(block, blockState);
+            EventCenter.GetInstance().EventTrigger("UseMagic", chooseObj);
             magicMat.SetFloat("_Magic", magicMat.GetFloat("_Magic") - 0.3f);
             bCtl.SetState(1^blockState);
             inMagic = false;
@@ -123,7 +124,7 @@ public class InputMgr : SingletonMono<InputMgr>
     void GravityMagic()
     {
         inMagic = true;
-        pos = GetCurrentMouse();
+        chooseObj = GetCurrentMouse();
         // clear highlight
         if (highlightBlocks != null)
         {
@@ -131,17 +132,17 @@ public class InputMgr : SingletonMono<InputMgr>
         }
         highlightBlocks = null;
 
-        if (pos.GetComponent<Outline>())
+        if (chooseObj.GetComponent<Outline>())
         {
-            if (highlightBlocks && pos.name != highlightBlocks.name)
+            if (highlightBlocks && chooseObj.name != highlightBlocks.name)
             {
                 highlightBlocks.GetComponent<Outline>().enabled = false;
-                highlightBlocks = pos;
+                highlightBlocks = chooseObj;
                 highlightBlocks.GetComponent<Outline>().enabled = true;
             }
             else
             {
-                highlightBlocks = pos;
+                highlightBlocks = chooseObj;
                 highlightBlocks.GetComponent<Outline>().enabled = true;
             }
         }

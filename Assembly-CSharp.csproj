@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
      <Compile Include="Assets\Scripts\Enemy\Detect.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
+     <Compile Include="Assets\Scripts\EventCenter.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

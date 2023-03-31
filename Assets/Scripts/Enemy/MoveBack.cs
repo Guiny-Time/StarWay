@@ -17,6 +17,7 @@ public class MoveBack : ActionNode
     private List<AStarNode> result;
     // 路径计数
     private int count = 0;
+    private bool inBack = true;
     protected override void OnStart() {
         var transform = context.transform;
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
@@ -29,8 +30,15 @@ public class MoveBack : ActionNode
 
     protected override State OnUpdate()
     {
-        MoveGameObject();
-        return State.Success;
+        if (inBack)
+        {
+            MoveGameObject();
+        }
+        else
+        {
+            return State.Failure;
+        }
+        return State.Running;
     }
     
     /// <summary>
@@ -45,11 +53,8 @@ public class MoveBack : ActionNode
             count++;
             if(count + 1 > result.Count)
             {
-                temp = startPoint;
-                startPoint = endPoint;
-                endPoint = temp;
-                result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
-                count = 0; 
+                count = 0;
+                inBack = false;
             }
         }
         else

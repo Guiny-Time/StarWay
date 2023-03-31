@@ -16,7 +16,7 @@ public class PlayerCtl : MonoBehaviour
     private int stepCount = 1;  // foot step
     private Vector2 temp;
     private GameObject pos; // mouse choose obj
-    private bool inMagic;   // whether in magic state
+
 
     
     private void Awake()
@@ -28,7 +28,7 @@ public class PlayerCtl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inMagic = false;
+        
     }
 
     // Update is called once per frame
