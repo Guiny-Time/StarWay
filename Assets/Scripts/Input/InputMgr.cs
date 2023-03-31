@@ -10,6 +10,7 @@ public class InputMgr : SingletonMono<InputMgr>
     public GameObject pause1;
     public GameObject pause2;
     public Animator chapter;
+    public Material magicMat;
     public LineRenderer lr;
     
     protected Vector3 mousePosition;
@@ -25,6 +26,7 @@ public class InputMgr : SingletonMono<InputMgr>
         pause1.gameObject.SetActive(false);
         pause2.gameObject.SetActive(false);
         chapter.Play("OpenChapter");
+        magicMat.SetFloat("_Magic", 0);
         inMagic = false;
     }
 
@@ -54,7 +56,7 @@ public class InputMgr : SingletonMono<InputMgr>
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && magicMat.GetFloat("_Magic") > -0.6)
         {
             if (!inMagic)
             {
@@ -88,6 +90,7 @@ public class InputMgr : SingletonMono<InputMgr>
             int blockState = bCtl.GetState();
             // gravity magic
             BlockMgr.GetInstance().UseGravityMagic(block, blockState);
+            magicMat.SetFloat("_Magic", magicMat.GetFloat("_Magic") - 0.3f);
             bCtl.SetState(1^blockState);
             inMagic = false;
         }
@@ -130,7 +133,7 @@ public class InputMgr : SingletonMono<InputMgr>
 
         if (pos.GetComponent<Outline>())
         {
-            if (highlightBlocks != null && pos.name != highlightBlocks.name)
+            if (highlightBlocks && pos.name != highlightBlocks.name)
             {
                 highlightBlocks.GetComponent<Outline>().enabled = false;
                 highlightBlocks = pos;
@@ -142,7 +145,6 @@ public class InputMgr : SingletonMono<InputMgr>
                 highlightBlocks.GetComponent<Outline>().enabled = true;
             }
         }
-        
     }
     
     /// <summary>

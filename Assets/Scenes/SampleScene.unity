@@ -14656,6 +14656,7 @@ MonoBehaviour:
   pause1: {fileID: 227298415}
   pause2: {fileID: 214297650}
   chapter: {fileID: 443516618}
+  magicMat: {fileID: 2100000, guid: ab5456b236269e847b07057eea35a6a1, type: 2}
   lr: {fileID: 1453197430}
 --- !u!1 &1848799137
 GameObject:

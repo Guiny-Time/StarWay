@@ -8,7 +8,7 @@ public class PlayerCtl : MonoBehaviour
 {
     public int speed;
     public int magic;
-    
+
     private List<AStarNode> result = new List<AStarNode>();
     private List<AStarNode> temp_result = new List<AStarNode>();
     private GameObject highlightBlocks = null;
@@ -73,14 +73,14 @@ public class PlayerCtl : MonoBehaviour
         pos = InputMgr.GetInstance().GetCurrentMouse();
         try
         {
-            if (result == null && !inMagic)
+            if (result == null && !InputMgr.GetInstance().GetMagicState())
             {
                 highlightBlocks.GetComponent<Outline>().enabled = false;
                 highlightBlocks = null;
             }
             else
             {
-                if (highlightBlocks != null && pos.name != highlightBlocks.name)
+                if (highlightBlocks && pos.name != highlightBlocks.name)
                 {
                     highlightBlocks.GetComponent<Outline>().enabled = false;
                     highlightBlocks = pos;
