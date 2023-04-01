@@ -60,13 +60,15 @@
      <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Map\MapMgr.cs" />
      <Compile Include="Assets\Scripts\Enemy\Detect.cs" />
-     <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
      <Compile Include="Assets\Scripts\EventCenter.cs" />
+     <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
+     <Compile Include="Assets\Scripts\UISys\MusicCtl.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\Materials" />
+     <Folder Include="Assets\Art\Music" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <Folder Include="Assets\Presets\Defaults" />
      <Folder Include="Assets\Models\low-poly-robot" />

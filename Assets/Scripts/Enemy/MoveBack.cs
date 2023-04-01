@@ -30,6 +30,7 @@ public class MoveBack : ActionNode
 
     protected override State OnUpdate()
     {
+        Debug.Log("can can need");
         if (inBack)
         {
             MoveGameObject();

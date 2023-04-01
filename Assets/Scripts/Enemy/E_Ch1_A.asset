@@ -18,11 +18,12 @@ MonoBehaviour:
   position: {x: 278.4689, y: 216.00005}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 2, y: 3}
   endPoint: {x: 5, y: 3}
-  speed: 1.5
+  speed: 1
   attack: {fileID: 0}
 --- !u!114 &-4744259994293432426
 MonoBehaviour:
@@ -42,6 +43,7 @@ MonoBehaviour:
   position: {x: 79.20004, y: 392.8}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   endPoint: {x: 2, y: 3}
@@ -65,6 +67,7 @@ MonoBehaviour:
   position: {x: -71.20002, y: 392.99362}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
@@ -88,6 +91,7 @@ MonoBehaviour:
   position: {x: -371.99997, y: 392.99362}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   precision: 4
@@ -111,6 +115,7 @@ MonoBehaviour:
   position: {x: 8, y: -267.64}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   child: {fileID: -323191929548767548}
@@ -132,6 +137,7 @@ MonoBehaviour:
   position: {x: -221.59998, y: 392.99362}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
@@ -156,6 +162,7 @@ MonoBehaviour:
   position: {x: 4.000023, y: 216.19363}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   children:
@@ -179,6 +186,7 @@ MonoBehaviour:
   position: {x: 8, y: -143.4}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   child: {fileID: 2812328631599928220}
@@ -211,6 +219,7 @@ MonoBehaviour:
   - {fileID: -4744259994293432426}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
 --- !u!114 &1688398309857585670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +238,7 @@ MonoBehaviour:
   position: {x: -296.8, y: 216.19363}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   children:
@@ -252,6 +262,7 @@ MonoBehaviour:
   position: {x: 8, y: -25}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    inAlumb: 0
   description: 
   drawGizmos: 0
   children:

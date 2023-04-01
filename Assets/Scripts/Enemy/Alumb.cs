@@ -24,7 +24,7 @@ public class Alumb : ActionNode
     protected override void OnStart()
     {
         var transform = context.transform;
-        EventCenter.GetInstance().AddEventListener("UseMagic", (GameObject o) => { 
+        EventCenter.GetInstance().AddEventListener("UseMagic", (GameObject o) => {
             magicTrigger = true;
             alumbObj = o;
             startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
@@ -33,20 +33,28 @@ public class Alumb : ActionNode
         });
     }
 
-    protected override void OnStop() {
+    protected override void OnStop()
+    {
+        magicTrigger = false;
+        blackboard.inAlumb = false;
     }
 
     protected override State OnUpdate() {
-        if (magicTrigger)
+        Debug.Log(magicTrigger);
+        if (magicTrigger && !blackboard.inAlumb)
         {
-            var transform = context.transform;
+            Debug.Log("wow!");
             MoveGameObject();
             return State.Running;
         }
- 
+
+        if (blackboard.inAlumb)
+        {
+            return State.Success;
+        }
         return State.Failure;
     }
-    
+
     /// <summary>
     /// 根据路径进行移动
     /// </summary>
@@ -63,8 +71,8 @@ public class Alumb : ActionNode
                 // startPoint = endPoint;
                 // endPoint = temp;
                 // result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
-                count = 0; 
-                magicTrigger = false;
+                count = 0;
+                blackboard.inAlumb = true;
             }
         }
         else

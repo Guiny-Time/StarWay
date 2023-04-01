@@ -85,7 +85,7 @@ public class InputMgr : SingletonMono<InputMgr>
         if(Input.GetMouseButtonDown(0))
         {
             print("对该方块施展重力魔法：" + chooseObj.name);
-            GameObject block = InputMgr.GetInstance().GetCurrentMouse();
+            GameObject block = GetCurrentMouse();
             BlockCtl bCtl = block.GetComponent<BlockCtl>();
             int blockState = bCtl.GetState();
             // gravity magic

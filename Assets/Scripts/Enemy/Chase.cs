@@ -39,6 +39,7 @@ public class Chase : ActionNode
 
         if (Vector3.Distance(transform.position, player.transform.position) <= 1)
         {
+            EventCenter.GetInstance().Clear();
             SceneManager.LoadScene(0,LoadSceneMode.Single);
             // return State.Failure;
         }
