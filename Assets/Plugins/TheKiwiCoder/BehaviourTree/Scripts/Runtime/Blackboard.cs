@@ -11,5 +11,6 @@ namespace TheKiwiCoder {
     public class Blackboard {
         public Vector3 moveToPosition;
         public bool inAlumb = false;
+        public bool inBack = false;
     }
 }

@@ -19,6 +19,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 2, y: 3}
@@ -44,6 +45,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   endPoint: {x: 2, y: 3}
@@ -68,6 +70,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
@@ -92,6 +95,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   precision: 4
@@ -116,6 +120,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   child: {fileID: -323191929548767548}
@@ -138,6 +143,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
@@ -163,6 +169,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   children:
@@ -187,6 +194,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   child: {fileID: 2812328631599928220}
@@ -220,6 +228,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
 --- !u!114 &1688398309857585670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +248,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   children:
@@ -263,6 +273,7 @@ MonoBehaviour:
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
+    inBack: 0
   description: 
   drawGizmos: 0
   children:

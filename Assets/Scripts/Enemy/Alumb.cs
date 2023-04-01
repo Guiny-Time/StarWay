@@ -40,10 +40,8 @@ public class Alumb : ActionNode
     }
 
     protected override State OnUpdate() {
-        Debug.Log(magicTrigger);
         if (magicTrigger && !blackboard.inAlumb)
         {
-            Debug.Log("wow!");
             MoveGameObject();
             return State.Running;
         }
@@ -67,10 +65,6 @@ public class Alumb : ActionNode
             count++;
             if(count + 1 >= result.Count)
             {
-                // temp = startPoint;
-                // startPoint = endPoint;
-                // endPoint = temp;
-                // result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
                 count = 0;
                 blackboard.inAlumb = true;
             }

@@ -25,21 +25,25 @@ public class MoveBack : ActionNode
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
     }
 
-    protected override void OnStop() {
+    protected override void OnStop()
+    {
+        inBack = true;
+        blackboard.inBack = false;
     }
 
     protected override State OnUpdate()
     {
-        Debug.Log("can can need");
-        if (inBack)
+        if ( inBack && !blackboard.inBack)
         {
             MoveGameObject();
+            return State.Running;
         }
-        else
+
+        if (blackboard.inBack)
         {
-            return State.Failure;
+            return State.Success;
         }
-        return State.Running;
+        return State.Failure;
     }
     
     /// <summary>
@@ -55,7 +59,7 @@ public class MoveBack : ActionNode
             if(count + 1 > result.Count)
             {
                 count = 0;
-                inBack = false;
+                blackboard.inBack = true;
             }
         }
         else
