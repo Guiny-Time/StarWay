@@ -41,12 +41,12 @@ public class Chase : ActionNode
         {
             EventCenter.GetInstance().Clear();
             SceneManager.LoadScene(0,LoadSceneMode.Single);
-            // return State.Failure;
+            return State.Success;
         }
 
-        if (Vector3.Distance(transform.position, player.transform.position) > radius)
+        if (Vector3.Distance(transform.position, player.transform.position) > radius + 1.5f)
         {
-            return State.Failure;
+            return State.Success;
         }
         MoveGameObject();
         return State.Running;
