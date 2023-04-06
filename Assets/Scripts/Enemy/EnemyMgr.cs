@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Polybrush;
 using UnityEngine.SceneManagement;
 
-public class EnemyMgr : MonoBehaviour
+public class EnemyMgr : BaseManager<EnemyMgr>
 {
     [Header("起止点")]
     public Vector2 startPoint;
@@ -15,12 +15,7 @@ public class EnemyMgr : MonoBehaviour
     [Header("个性化参数")]
     // 速度
     public float speed;
-    // 检测精度
-    public int precision = 1;
-    // 检测角度
-    public int angle;
-    // 半径
-    public float radius;
+    
     // 攻击范围obj
     public GameObject attack;
 
@@ -41,71 +36,21 @@ public class EnemyMgr : MonoBehaviour
     {
         
     }
-    
+
     /// <summary>
-    /// 移动过程中遇到的事情（碰到我方单位/碰到防御点
+    /// 检测是否发现玩家
     /// </summary>
-    public void EnermyMoveing(){
-
-        result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
-
-        MoveGameObject();
-    }
-    
-    /// <summary>
-    /// 根据路径进行移动
-    /// </summary>
-    void MoveGameObject(){
-        
-        Vector3 NextPos = new Vector3(result[count].y, 0, result[count].x);
-        // 一般通行
-        if(transform.position == NextPos){
-            count++;
-            if(count + 1 > result.Count)
-            {
-                temp = startPoint;
-                startPoint = endPoint;
-                endPoint = temp;
-                result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
-                count = 0; 
-            }
-        }
-        else
-        {
-            transform.rotation = Quaternion.LookRotation(NextPos - transform.position, Vector3.up); //转向
-            transform.position = Vector3.MoveTowards(transform.position, NextPos, speed * Time.deltaTime);
-        }
-        
-        // 遇见玩家
-        if (DetectPlayer())
-        {
-            // 重载
-            // SceneManager.LoadScene(0);
-            Material[] materials = attack.GetComponent<MeshRenderer>().materials;
-            materials[0] = Resources.Load("find") as Material;
-            materials[1] = Resources.Load("find_b") as Material;
-            attack.GetComponent<MeshRenderer>().materials = materials;
-        }
-        else
-        {
-            Material[] materials = attack.GetComponent<MeshRenderer>().materials;
-            materials[0] = Resources.Load("normal") as Material;
-            materials[1] = Resources.Load("normal_b") as Material;
-            attack.GetComponent<MeshRenderer>().materials = materials;
-        }
-
-    }
-
-    public bool DetectPlayer()
+    /// <returns></returns>
+    public bool DetectPlayer(int precision, int angle, float radius, Transform t)
     {
-        if (GenerateRay(0))
+        if (GenerateRay(0, radius, t))
         {
             return true;
             
         }
         for (int i = 1; i < precision; i++)
         {
-            if (GenerateRay(angle / (2 * i)) || GenerateRay(-1 * angle / (2 * i)))
+            if (GenerateRay(angle / (2 * i), radius, t) || GenerateRay(-1 * angle / (2 * i), radius, t))
             {
                 return true;
             }
@@ -113,10 +58,15 @@ public class EnemyMgr : MonoBehaviour
         return false;
     }
 
-    public bool GenerateRay(int angle)
+    /// <summary>
+    /// 生成射线检测玩家
+    /// </summary>
+    /// <param name="angle"></param>
+    /// <returns></returns>
+    public bool GenerateRay(int angle, float radius, Transform t)
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.Normalize(Quaternion.Euler(0, angle, 0) * transform.forward), out hit,
+        if (Physics.Raycast(t.position, Vector3.Normalize(Quaternion.Euler(0, angle, 0) * t.forward), out hit,
                 radius) && hit.collider.CompareTag("Player"))
         {
             return true;

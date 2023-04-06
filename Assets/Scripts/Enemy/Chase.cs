@@ -20,35 +20,47 @@ public class Chase : ActionNode
     private List<AStarNode> result = new List<AStarNode>();
     // 路径计数
     private int count = 0;
+    private Transform transform;
     protected override void OnStart() {
-        var transform = context.transform;
+        transform = context.transform;
         player = GameObject.FindWithTag("Player");
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
+        
+        ChangeColorRed(transform);
     }
 
-    protected override void OnStop() {
+    protected override void OnStop()
+    {
+        blackboard.detectPlayer = false;
+        ChangeColorNormal(transform);
     }
 
     protected override State OnUpdate() {
-        var transform = context.transform;
-        startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
-        endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
-        result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
-
-        if (Vector3.Distance(transform.position, player.transform.position) <= 1)
+        if (blackboard.detectPlayer)
         {
-            EventCenter.GetInstance().Clear();
-            SceneManager.LoadScene(0,LoadSceneMode.Single);
-            return State.Success;
+            startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
+            endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
+            result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
+
+            if (Vector3.Distance(transform.position, player.transform.position) <= 1)
+            {
+                EventCenter.GetInstance().Clear();
+                blackboard.detectPlayer = false;
+                SceneManager.LoadScene(0,LoadSceneMode.Single);
+                return State.Success;
+            }
+
+            if (Vector3.Distance(transform.position, player.transform.position) > radius + 1.5f)
+            {
+                blackboard.detectPlayer = false;
+                return State.Success;
+            }
+            MoveGameObject();
+            return State.Running;
         }
 
-        if (Vector3.Distance(transform.position, player.transform.position) > radius + 1.5f)
-        {
-            return State.Success;
-        }
-        MoveGameObject();
         return State.Running;
     }
     
@@ -57,7 +69,6 @@ public class Chase : ActionNode
     /// </summary>
     void MoveGameObject()
     {
-        var transform = context.transform;
         Vector3 NextPos = new Vector3(result[count].y, 0, result[count].x);
         // 一般通行
         if(transform.position == NextPos){
@@ -77,5 +88,23 @@ public class Chase : ActionNode
             transform.position = Vector3.MoveTowards(transform.position, NextPos, speed * Time.deltaTime);
         }
 
+    }
+    
+    public void ChangeColorRed(Transform transform)
+    {
+        GameObject attack = transform.GetChild(transform.childCount - 1).gameObject;
+        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
+        materials[0] = Resources.Load("find") as Material;
+        materials[1] = Resources.Load("find_b") as Material;
+        attack.GetComponent<MeshRenderer>().materials = materials;
+    }
+    
+    public void ChangeColorNormal(Transform transform)
+    {
+        GameObject attack = transform.GetChild(transform.childCount - 1).gameObject;
+        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
+        materials[0] = Resources.Load("normal") as Material;
+        materials[1] = Resources.Load("normal_b") as Material;
+        attack.GetComponent<MeshRenderer>().materials = materials;
     }
 }

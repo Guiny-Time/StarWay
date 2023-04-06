@@ -6,11 +6,11 @@ using TheKiwiCoder;
 public class Detect : ActionNode
 {
     // 检测精度
-    public int precision = 1;
+    public int precision = 4;
     // 检测角度
-    public int angle;
+    public int angle;   //45
     // 半径
-    public float radius;
+    public float radius;    //2.5
     protected override void OnStart() {
     }
 

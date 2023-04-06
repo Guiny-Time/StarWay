@@ -12,6 +12,13 @@ public class MoveBack : ActionNode
     public float speed;
     // 攻击范围obj
     public GameObject attack;
+    
+    // 检测精度
+    public int precision = 4;
+    // 检测角度
+    public int angle;   //45
+    // 半径
+    public float radius;    //2.5
 
     // 路径
     private List<AStarNode> result;
@@ -33,6 +40,16 @@ public class MoveBack : ActionNode
 
     protected override State OnUpdate()
     {
+        var t = context.transform;
+        if (blackboard.detectPlayer)
+        {
+            return State.Failure;
+        }
+        if (EnemyMgr.GetInstance().DetectPlayer(precision, angle, radius, t))
+        {
+            blackboard.detectPlayer = true;
+            return State.Failure;
+        }
         if ( inBack && !blackboard.inBack)
         {
             MoveGameObject();
