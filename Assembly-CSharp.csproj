@@ -87,6 +87,7 @@
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Scripts\Input" />
      <Folder Include="Assets\Settings" />
+     <Folder Include="Assets\Models\Chapter1" />
      <Folder Include="Assets\Scripts\Player" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <Folder Include="Assets\Scripts\Enemy" />
@@ -101,6 +102,7 @@
      <Folder Include="Assets\Art\Animations" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\Models\Chapter1\Swamp1" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />

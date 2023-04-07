@@ -114,7 +114,6 @@ public class InputMgr : SingletonMono<InputMgr>
             mousePosition = hitData.point;
             mapCollider = hitData.collider.transform.gameObject;
         }
-        
         return mapCollider;
     }
     
