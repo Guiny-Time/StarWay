@@ -41,14 +41,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeSettings.cs" />
-     <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor\InspectorView.cs" />
-     <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeEditor.cs" />
-     <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor\DoubleClickSelection.cs" />
-     <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeView.cs" />
-     <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor\NodeView.cs" />
-     <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor\SplitView.cs" />
-     <Folder Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Editor" />
+     <Compile Include="Assets\ReuseScroller\Editor\BaseCellEditor.cs" />
+     <Compile Include="Assets\ReuseScroller\Editor\BaseControllerEditor.cs" />
+     <Folder Include="Assets\ReuseScroller\Editor" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -901,6 +896,22 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{3f3f364c-d115-a8dc-f7c9-3af0d0f4cb5f}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{c99c021d-2bee-04a1-b39d-ded4c3cce8b3}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{fc275d5d-411b-adff-7258-aa529ededcb4}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
+      <Project>{338b7677-acd1-bada-a094-b2e955e9b8de}</Project>
+      <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{7bb5bdae-9c69-ea76-95b6-8fd75abd39c0}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

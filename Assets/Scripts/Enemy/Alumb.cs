@@ -34,6 +34,17 @@ public class Alumb : ActionNode
     {
         transform = context.transform;
         count = 0;
+        
+    }
+
+    protected override void OnStop()
+    {
+        count = 0;
+        magicTrigger = false;
+        blackboard.inAlumb = false;
+    }
+
+    protected override State OnUpdate() {
         EventCenter.GetInstance().AddEventListener("UseMagic", (GameObject o) => {
             magicTrigger = true;
             alumbObj = o;
@@ -46,16 +57,6 @@ public class Alumb : ActionNode
             Debug.Log(result.Count);
             Debug.Log("success");
         });
-    }
-
-    protected override void OnStop()
-    {
-        count = 0;
-        magicTrigger = false;
-        blackboard.inAlumb = false;
-    }
-
-    protected override State OnUpdate() {
 
         if (blackboard.detectPlayer)
         {

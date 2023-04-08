@@ -63,8 +63,15 @@
      <Compile Include="Assets\Scripts\UISys\MusicCtl.cs" />
      <Compile Include="Assets\Scripts\EventCenter.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
+     <Compile Include="Assets\ReuseScroller\Examples\ExampleTableController.cs" />
+     <Compile Include="Assets\ReuseScroller\Scripts\BaseController.cs" />
+     <Compile Include="Assets\ReuseScroller\Examples\ExampleController.cs" />
+     <Compile Include="Assets\ReuseScroller\Examples\ExampleCell.cs" />
+     <Compile Include="Assets\ReuseScroller\Examples\ExampleTable.cs" />
+     <Compile Include="Assets\ReuseScroller\Scripts\BaseCell.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <Folder Include="Assets\Models\space-exploration-wlp-series-8\source" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\Materials" />
@@ -72,6 +79,7 @@
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <Folder Include="Assets\Presets\Defaults" />
      <Folder Include="Assets\Models\low-poly-robot" />
+     <Folder Include="Assets\ReuseScroller\Examples" />
      <Folder Include="Assets\Scripts" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\Scripts\Save" />
@@ -89,6 +97,7 @@
      <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Models\Chapter1" />
      <Folder Include="Assets\Scripts\Player" />
+     <Folder Include="Assets\Models\space-exploration-wlp-series-8\textures" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <Folder Include="Assets\Scripts\Enemy" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -100,8 +109,10 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <Folder Include="Assets\Art\Animations" />
+     <Folder Include="Assets\ReuseScroller\Scripts" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\Scenes\Open" />
      <Folder Include="Assets\Models\Chapter1\Swamp1" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
@@ -109,6 +120,7 @@
      <Folder Include="Assets\Scripts\Block" />
      <Folder Include="Assets\Resources" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets\Models\space-exploration-wlp-series-8" />
      <Folder Include="Assets\Scripts\UISys" />
      <Folder Include="Assets\Materials\chapter 1" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -118,6 +130,7 @@
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <Folder Include="Assets\TextMesh Pro\Documentation" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <Folder Include="Assets\ReuseScroller" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Folder Include="Assets\Scripts\AStar" />
@@ -909,6 +922,18 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{734d906a-b6a3-9a61-2a51-34dd40c05163}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{fc275d5d-411b-adff-7258-aa529ededcb4}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
+      <Project>{338b7677-acd1-bada-a094-b2e955e9b8de}</Project>
+      <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{7bb5bdae-9c69-ea76-95b6-8fd75abd39c0}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
