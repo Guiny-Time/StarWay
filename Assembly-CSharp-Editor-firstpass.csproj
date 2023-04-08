@@ -43,12 +43,15 @@
   <ItemGroup>
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeView.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\InspectorView.cs" />
+     <Compile Include="Assets\Plugins\ReuseScroller\Editor\BaseCellEditor.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\NodeView.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\DoubleClickSelection.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeEditor.cs" />
+     <Compile Include="Assets\Plugins\ReuseScroller\Editor\BaseControllerEditor.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeSettings.cs" />
      <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\SplitView.cs" />
      <Folder Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor" />
+     <Folder Include="Assets\Plugins\ReuseScroller\Editor" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -802,9 +805,6 @@
      <Reference Include="Unity.Searcher.Editor">
      <HintPath>F:\github\StarWay\FYP\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>F:\github\StarWay\FYP\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>F:\github\StarWay\FYP\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
@@ -831,6 +831,9 @@
      </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>F:\github\StarWay\FYP\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Runtime">
+     <HintPath>F:\github\StarWay\FYP\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Polybrush.Editor">
      <HintPath>F:\github\StarWay\FYP\Library\ScriptAssemblies\Unity.Polybrush.Editor.dll</HintPath>
@@ -898,17 +901,17 @@
       <Project>{734d906a-b6a3-9a61-2a51-34dd40c05163}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
-      <Project>{fc275d5d-411b-adff-7258-aa529ededcb4}</Project>
-      <Name>Boxophobic.Utils.Scripts</Name>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{7bb5bdae-9c69-ea76-95b6-8fd75abd39c0}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
       <Project>{338b7677-acd1-bada-a094-b2e955e9b8de}</Project>
       <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
-      <Project>{7bb5bdae-9c69-ea76-95b6-8fd75abd39c0}</Project>
-      <Name>Boxophobic.Utils.Editor</Name>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{fc275d5d-411b-adff-7258-aa529ededcb4}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
