@@ -48,7 +48,7 @@ public class Chase : ActionNode
             {
                 EventCenter.GetInstance().Clear();
                 blackboard.detectPlayer = false;
-                SceneManager.LoadScene(0,LoadSceneMode.Single);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
                 return State.Success;
             }
 

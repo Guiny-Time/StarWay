@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UICtl : SingletonMono<UICtl>
 {
     public AudioSource bgm;
+    public AudioSource soundEffect;
     public GameObject[] panelElement;
     private bool isOpen = false;
     [SerializeReference] private GameObject menuPanel;
@@ -14,11 +15,12 @@ public class UICtl : SingletonMono<UICtl>
     [SerializeReference] private GameObject volumeControl;
     Stack<GameObject> PanelList = new Stack<GameObject>();
     private GameObject[] audioSource;
+    [SerializeReference] private Animator UIAnim;
 
     private void Start()
     {
+        UIAnim = this.gameObject.GetComponent<Animator>();
         // Cursor.lockState = CursorLockMode.Confined;
-        bgm = GameObject.Find("Music").GetComponent<AudioSource>();
         MusicMgr.GetInstance().SetBKObject(bgm);
     }
 
@@ -71,7 +73,7 @@ public class UICtl : SingletonMono<UICtl>
     {
         Time.timeScale = 1;
         EventCenter.GetInstance().Clear();
-        SceneManager.LoadScene(0,LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
     }
 
     /// <summary>
@@ -80,6 +82,15 @@ public class UICtl : SingletonMono<UICtl>
     public void ReloadChapter()
     {
         Debug.Log("重新加载章节");
+    }
+
+    /// <summary>
+    /// 退出到开始界面
+    /// </summary>
+    public void ExitToOpen()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 
     /// <summary>
@@ -102,6 +113,36 @@ public class UICtl : SingletonMono<UICtl>
         isOpen = false;
         Time.timeScale = 1;
         // Cursor.lockState = CursorLockMode.Confined;        
+    }
+
+    /// <summary>
+    /// 新游戏
+    /// </summary>
+    public void NewGame()
+    {
+        // 清空存档
+        PlayButtonClick();
+        UIAnim.Play("CloseChapter");
+        Invoke("LoadNewGame",1.5f);
+    }
+
+    private void LoadNewGame()
+    {
+        SceneManager.LoadScene("Ch1");
+    }
+    /// <summary>
+    /// hover音效
+    /// </summary>
+    public void PlayButtonOver()
+    {
+        soundEffect.clip = (AudioClip)Resources.Load("Music/button_over");
+        soundEffect.Play();
+    }
+
+    public void PlayButtonClick()
+    {
+        soundEffect.clip = (AudioClip)Resources.Load("Music/button_click");
+        soundEffect.Play();
     }
 
     //静音
