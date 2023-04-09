@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Base\MonoMgr.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMgr.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
+     <Compile Include="Assets\Scripts\Utils\Rotation.cs" />
      <Compile Include="Assets\Scripts\Enemy\Alumb.cs" />
      <Compile Include="Assets\Scripts\Enemy\Move.cs" />
      <Compile Include="Assets\Scripts\Input\InputMgr.cs" />
@@ -67,11 +68,10 @@
      <Compile Include="Assets\Scripts\UISys\UICtl.cs" />
      <Compile Include="Assets\Scripts\EventCenter.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Scripts\Utils\Rotation.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8\source" />
      <Folder Include="Assets\Art\Materials" />
-     <Folder Include="Assets\Art\Music" />
+     <Folder Include="Assets\Resources\Music" />
      <Folder Include="Assets\Presets\Defaults" />
      <Folder Include="Assets\Art\Models\low-poly-robot" />
      <Folder Include="Assets\Scripts" />
