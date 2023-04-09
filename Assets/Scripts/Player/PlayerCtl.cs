@@ -12,11 +12,10 @@ public class PlayerCtl : MonoBehaviour
     private List<AStarNode> result = new List<AStarNode>();
     private List<AStarNode> temp_result = new List<AStarNode>();
     private GameObject highlightBlocks = null;
-    private bool moveState = false; //false: stand; true: moving
+    private bool moveState; //false: stand; true: moving
     private int stepCount = 1;  // foot step
     private Vector2 temp;
     private GameObject pos; // mouse choose obj
-
 
     
     private void Awake()
@@ -28,24 +27,28 @@ public class PlayerCtl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        moveState = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         InputMgr.GetInstance().UIListener(result);
+        if (!UICtl.GetInstance().GetPanelState())
+        {
+            ChooseBlock();      // choose move-to block
+        }
+
+        if (moveState) { Moving(); }     // moving
         
-        ChooseBlock();
-        
+        // find fath
         if (pos != null)
         {
             result = AStarMgr.GetInstance().FindPath(new Vector2( Mathf.Round(transform.position.z), Mathf.Round(transform.position.x)),
                 new Vector2(pos.transform.position.z,pos.transform.position.x));
         }
-        
-        if(moveState) { Moving(); }     // moving
 
+        // use magic
         if (InputMgr.GetInstance().GetMagicState())
         {
             InputMgr.GetInstance().InMagic();
@@ -55,7 +58,7 @@ public class PlayerCtl : MonoBehaviour
             InputMgr.GetInstance().DrawLine(result);
             if(Input.GetMouseButtonDown(0))
             {
-                if (result.Count != 0)
+                if (result.Count != 0 && !UICtl.GetInstance().GetPanelState())
                 {
                     temp_result = result;
                     stepCount = 1; 
@@ -93,7 +96,7 @@ public class PlayerCtl : MonoBehaviour
                 }
             }
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return;
         }

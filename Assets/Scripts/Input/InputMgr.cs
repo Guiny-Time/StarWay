@@ -36,7 +36,7 @@ public class InputMgr : SingletonMono<InputMgr>
         {
             // 弹出UI
             Debug.Log("弹出设置界面");
-            // Application.Quit();
+            UICtl.GetInstance().ShowPanel();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

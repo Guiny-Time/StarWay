@@ -443,6 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523772345}
   - component: {fileID: 523772344}
+  - component: {fileID: 523772346}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -561,6 +562,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &523772346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523772343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356c77a5ff8d547448f679e6d37fde85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgm: {fileID: 523772344}
+  panelElement: []
+  menuPanel: {fileID: 0}
+  exitConfirm: {fileID: 0}
+  volumeControl: {fileID: 0}
 --- !u!1 &523815989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,7 +2252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Load Save
+  m_text: Load
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}
   m_sharedMaterial: {fileID: 5042019701754962985, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}

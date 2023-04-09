@@ -63,6 +63,10 @@
      <Compile Include="Assets\Scripts\UISys\MusicCtl.cs" />
      <Compile Include="Assets\Scripts\EventCenter.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
+     <Compile Include="Assets\Scripts\UISys\UICtl.cs" />
+     <Compile Include="Assets\Scripts\UISys\MusicMgr.cs" />
+     <Compile Include="Assets\Scripts\Base\MonoMgr.cs" />
+     <Compile Include="Assets\Scripts\Base\MonoCtl.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8\source" />
      <Folder Include="Assets\Art\Materials" />
@@ -85,14 +89,13 @@
      <Folder Include="Assets\Art" />
      <Folder Include="Assets\Art\Animations" />
      <Folder Include="Assets\Scenes\Open" />
-     <Folder Include="Assets\Art\Models\Chapter1\Swamp1" />
      <Folder Include="Assets\Scripts\Block" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8" />
      <Folder Include="Assets\Scripts\UISys" />
      <Folder Include="Assets\Art\Materials\chapter 1" />
      <Folder Include="Assets\Scenes" />
-     <Folder Include="Assets\Art\UI" />
+     <Folder Include="Assets\Art\Textures" />
      <Folder Include="Assets\Scripts\AStar" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
