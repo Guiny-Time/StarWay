@@ -12,7 +12,7 @@ public class LevelLogic : MonoBehaviour
         print(PlayerPrefs.GetString("Progress"));
         GameObject map = (GameObject)Resources.Load("Prefab/" + PlayerPrefs.GetString("Progress"));
         GameObject.Instantiate(map, root.transform);
-        // SaveMgr.GetInstance().InitChapNames();
+        SaveMgr.GetInstance().InitChapNames();
     }
 
     // Start is called before the first frame update

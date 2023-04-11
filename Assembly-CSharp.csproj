@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\UISys\MusicMgr.cs" />
      <Compile Include="Assets\Scripts\Base\MonoMgr.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMgr.cs" />
+     <Compile Include="Assets\Scripts\Block\Door.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarNode.cs" />
      <Compile Include="Assets\Scripts\Utils\Rotation.cs" />
      <Compile Include="Assets\Scripts\Enemy\Alumb.cs" />
@@ -57,7 +58,9 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyCh1.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonMono.cs" />
      <Compile Include="Assets\Scripts\Enemy\MoveBack.cs" />
+     <Compile Include="Assets\Scripts\Utils\LevelLogic.cs" />
      <Compile Include="Assets\Scripts\Block\BlockCtl.cs" />
+     <Compile Include="Assets\Scripts\Save\SaveMgr.cs" />
      <Compile Include="Assets\Scripts\Base\MonoCtl.cs" />
      <Compile Include="Assets\Scripts\Enemy\Chase.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMgr.cs" />
@@ -69,9 +72,6 @@
      <Compile Include="Assets\Scripts\UISys\UICtl.cs" />
      <Compile Include="Assets\Scripts\Base\EventCenter.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Scripts\Save\SaveMgr.cs" />
-     <Compile Include="Assets\Scripts\Utils\LevelLogic.cs" />
-     <Compile Include="Assets\Scripts\Block\Door.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8\source" />
      <Folder Include="Assets\Art\Materials" />

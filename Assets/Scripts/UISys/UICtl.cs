@@ -15,8 +15,8 @@ public class UICtl : SingletonMono<UICtl>
     [SerializeReference] private GameObject volumeControl;
     [SerializeReference] private Animator UIAnim;
     
-    // private TMP_Text T_ChapterID;
-    // private TMP_Text T_ChapterName;
+    private TMP_Text T_ChapterID;
+    private TMP_Text T_ChapterName;
     
     Stack<GameObject> PanelList = new Stack<GameObject>();
     
@@ -27,8 +27,8 @@ public class UICtl : SingletonMono<UICtl>
     private void OnEnable()
     {
         UIAnim = this.gameObject.GetComponent<Animator>();
-        // T_ChapterID = GameObject.Find("T_ChapterID").GetComponent<TMP_Text>();
-        // T_ChapterName = GameObject.Find("T_ChapterName").GetComponent<TMP_Text>();
+        T_ChapterID = GameObject.Find("T_ChapterID").GetComponent<TMP_Text>();
+        T_ChapterName = GameObject.Find("T_ChapterName").GetComponent<TMP_Text>();
         // Cursor.lockState = CursorLockMode.Confined;
         // MusicMgr.GetInstance().SetBKObject(bgm);
     }
@@ -47,11 +47,11 @@ public class UICtl : SingletonMono<UICtl>
             }
         }
 
-        /*if (T_ChapterID && T_ChapterName)
+        if (T_ChapterID && T_ChapterName)
         {
             T_ChapterID.text = SaveMgr.GetInstance().GetProgress();
             T_ChapterName.text = PlayerPrefs.GetString(SaveMgr.GetInstance().GetProgress());
-        }*/
+        }
     }
 
     public bool GetPanelState()
@@ -112,6 +112,8 @@ public class UICtl : SingletonMono<UICtl>
     public void ReloadChapter()
     {
         Debug.Log("重新加载章节");
+        Time.timeScale = 1;
+        EventCenter.GetInstance().Clear();
         PlayerPrefs.SetString("Progress","Chap" + PlayerPrefs.GetInt("Chapter")+"-1");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
     }
