@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class InputMgr : SingletonMono<InputMgr>
 {
-    public GameObject pause1;
-    public GameObject pause2;
+    public GameObject[] pause;
     public Animator chapter;
     public Material magicMat;
     public LineRenderer lr;
@@ -21,10 +20,14 @@ public class InputMgr : SingletonMono<InputMgr>
     private GameObject highlightBlocks = null;
     private bool inMagic;   // whether in magic state
 
-    private void Start()
+    private void OnEnable()
     {
-        pause1.gameObject.SetActive(false);
-        pause2.gameObject.SetActive(false);
+        pause = GameObject.FindGameObjectsWithTag("pause");
+        chapter = GameObject.FindWithTag("AnimCanvas").GetComponent<Animator>();
+        foreach (var o in pause)
+        {
+            o.gameObject.SetActive(false);
+        }
         chapter.Play("OpenChapter");
         magicMat.SetFloat("_Magic", 0);
         inMagic = false;
@@ -45,14 +48,18 @@ public class InputMgr : SingletonMono<InputMgr>
             if (Time.timeScale == 1)
             {
                 Time.timeScale = 0;
-                pause1.gameObject.SetActive(true);
-                pause2.gameObject.SetActive(true);
+                foreach (var o in pause)
+                {
+                    o.gameObject.SetActive(true);
+                }
             }
             else
             {
                 Time.timeScale = 1;
-                pause1.gameObject.SetActive(false);
-                pause2.gameObject.SetActive(false);
+                foreach (var o in pause)
+                {
+                    o.gameObject.SetActive(false);
+                }
             }
         }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,19 +10,48 @@ public class UICtl : SingletonMono<UICtl>
     public AudioSource bgm;
     public AudioSource soundEffect;
     public GameObject[] panelElement;
-    private bool isOpen = false;
-    [SerializeReference] private GameObject menuPanel;
+    [SerializeReference] private GameObject continueGame;   // 加载存档按钮
     [SerializeReference] private GameObject exitConfirm;
     [SerializeReference] private GameObject volumeControl;
-    Stack<GameObject> PanelList = new Stack<GameObject>();
-    private GameObject[] audioSource;
     [SerializeReference] private Animator UIAnim;
+    
+    // private TMP_Text T_ChapterID;
+    // private TMP_Text T_ChapterName;
+    
+    Stack<GameObject> PanelList = new Stack<GameObject>();
+    
+    private GameObject[] audioSource;
+    private bool isOpen = false;
+    
 
-    private void Start()
+    private void OnEnable()
     {
         UIAnim = this.gameObject.GetComponent<Animator>();
+        // T_ChapterID = GameObject.Find("T_ChapterID").GetComponent<TMP_Text>();
+        // T_ChapterName = GameObject.Find("T_ChapterName").GetComponent<TMP_Text>();
         // Cursor.lockState = CursorLockMode.Confined;
-        MusicMgr.GetInstance().SetBKObject(bgm);
+        // MusicMgr.GetInstance().SetBKObject(bgm);
+    }
+
+    public void Start()
+    {
+        if (continueGame)
+        {
+            if (SaveMgr.GetInstance().GetProgress()!="Chap0-0")
+            {
+                continueGame.gameObject.SetActive(true);
+            }
+            else
+            {
+                continueGame.gameObject.SetActive(false);
+            }
+        }
+
+        /*if (T_ChapterID && T_ChapterName)
+        {
+            T_ChapterID.text = SaveMgr.GetInstance().GetProgress();
+            T_ChapterName.text = PlayerPrefs.GetString(SaveMgr.GetInstance().GetProgress());
+        }*/
     }
 
     public bool GetPanelState()
@@ -82,6 +112,8 @@ public class UICtl : SingletonMono<UICtl>
     public void ReloadChapter()
     {
         Debug.Log("重新加载章节");
+        PlayerPrefs.SetString("Progress","Chap" + PlayerPrefs.GetInt("Chapter")+"-1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
     }
 
     /// <summary>
@@ -98,7 +130,6 @@ public class UICtl : SingletonMono<UICtl>
     /// </summary>
     public void ExitGame()
     {
-        // PlayerPrefs ......
         Debug.Log("退出游戏");
         Application.Quit();
     }
@@ -121,6 +152,7 @@ public class UICtl : SingletonMono<UICtl>
     public void NewGame()
     {
         // 清空存档
+        SaveMgr.GetInstance().CleanSave();
         PlayButtonClick();
         UIAnim.Play("CloseChapter");
         Invoke("LoadNewGame",1.5f);
@@ -129,6 +161,15 @@ public class UICtl : SingletonMono<UICtl>
     private void LoadNewGame()
     {
         SceneManager.LoadScene("Ch1");
+    }
+
+    /// <summary>
+    /// 加载存档
+    /// </summary>
+    public void LoadSave()
+    {
+        PlayButtonClick();
+        Invoke("LoadNewGame",1.5f);
     }
     /// <summary>
     /// hover音效

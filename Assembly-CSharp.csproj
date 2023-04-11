@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Block\StarBlock.cs" />
      <Compile Include="Assets\Scripts\Block\BlockMgr.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCtl.cs" />
      <Compile Include="Assets\Scripts\Base\SingletonAutoMono.cs" />
@@ -66,9 +67,11 @@
      <Compile Include="Assets\Scripts\Enemy\Detect.cs" />
      <Compile Include="Assets\Scripts\UISys\MusicCtl.cs" />
      <Compile Include="Assets\Scripts\UISys\UICtl.cs" />
-     <Compile Include="Assets\Scripts\EventCenter.cs" />
+     <Compile Include="Assets\Scripts\Base\EventCenter.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Scripts\Block\StarBlock.cs" />
+     <Compile Include="Assets\Scripts\Save\SaveMgr.cs" />
+     <Compile Include="Assets\Scripts\Utils\LevelLogic.cs" />
+     <Compile Include="Assets\Scripts\Block\Door.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8\source" />
      <Folder Include="Assets\Art\Materials" />
@@ -76,6 +79,7 @@
      <Folder Include="Assets\Presets\Defaults" />
      <Folder Include="Assets\Art\Models\low-poly-robot" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Resources\Prefab" />
      <Folder Include="Assets\Scripts\Save" />
      <Folder Include="Assets\Art\Models" />
      <Folder Include="Assets\Scripts\Base" />

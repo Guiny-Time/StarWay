@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MapMgr : MonoBehaviour
 {
+    public int chapter;
+    public int level;
     public int mapWidth = 1;
     public int mapHeight = 1;
     public int collectionNum = 0;
@@ -14,6 +16,7 @@ public class MapMgr : MonoBehaviour
     private void Awake()
     {
         AStarMgr.GetInstance().InitMapInfo(info,mapWidth,mapHeight);
+        SaveMgr.GetInstance().Save(chapter, level);
         PlayerPrefs.SetInt("CollectionNum", 0);
     }
 

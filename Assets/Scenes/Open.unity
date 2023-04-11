@@ -277,7 +277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -175}
+  m_AnchoredPosition: {x: 418, y: -175}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &284058134
@@ -1034,8 +1034,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 523815990}
-  - {fileID: 1379805600}
   - {fileID: 933394532}
+  - {fileID: 1379805600}
   - {fileID: 284058133}
   - {fileID: 1490109935}
   - {fileID: 1611244470}
@@ -1063,6 +1063,7 @@ MonoBehaviour:
   bgm: {fileID: 523772344}
   soundEffect: {fileID: 332921822}
   panelElement: []
+  continueGame: {fileID: 933394531}
   menuPanel: {fileID: 0}
   exitConfirm: {fileID: 0}
   volumeControl: {fileID: 0}
@@ -1373,7 +1374,7 @@ GameObject:
   - component: {fileID: 933394536}
   - component: {fileID: 933394537}
   m_Layer: 5
-  m_Name: Load Save
+  m_Name: Continue Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1393,11 +1394,11 @@ RectTransform:
   m_Children:
   - {fileID: 1703853834}
   m_Father: {fileID: 824264733}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -75}
+  m_AnchoredPosition: {x: 418, y: 25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &933394533
@@ -1443,7 +1444,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 933394534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 824264734}
+        m_TargetAssemblyTypeName: UICtl, Assembly-CSharp
+        m_MethodName: LoadSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &933394534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,11 +2037,11 @@ RectTransform:
   m_Children:
   - {fileID: 824378222}
   m_Father: {fileID: 824264733}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 25}
+  m_AnchoredPosition: {x: 418, y: -75}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1379805601
@@ -2332,7 +2345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -275}
+  m_AnchoredPosition: {x: 418, y: -275}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490109936
@@ -2506,7 +2519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -375}
+  m_AnchoredPosition: {x: 418, y: -375}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1611244471
@@ -2688,8 +2701,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 126}
-  m_SizeDelta: {x: 369.84082, y: 30}
+  m_AnchoredPosition: {x: -39.770508, y: 126}
+  m_SizeDelta: {x: 449.382, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1703853835
 MonoBehaviour:
@@ -2711,7 +2724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Load
+  m_text: Continue Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}
   m_sharedMaterial: {fileID: 5042019701754962985, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}

@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Wall
   - Music
+  - pause
+  - AnimCanvas
   layers:
   - Default
   - TransparentFX
