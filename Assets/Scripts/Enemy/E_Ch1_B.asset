@@ -29,6 +29,7 @@ MonoBehaviour:
   precision: 4
   angle: 45
   radius: 2.5
+  anim: {fileID: 0}
 --- !u!114 &-4744259994293432426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +59,7 @@ MonoBehaviour:
   precision: 4
   angle: 45
   radius: 2.5
+  anim: {fileID: 0}
 --- !u!114 &-3642766428777185881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +85,7 @@ MonoBehaviour:
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
   endPoint: {x: 0, y: 0}
+  anim: {fileID: 0}
   speed: 1.5
   precision: 4
   angle: 45
@@ -136,6 +139,7 @@ MonoBehaviour:
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
   endPoint: {x: 0, y: 0}
+  anim: {fileID: 0}
   speed: 1.5
   radius: 2.5
 --- !u!114 &-1381181118382598817
@@ -298,6 +302,7 @@ MonoBehaviour:
   drawGizmos: 0
   startPoint: {x: 6, y: 5}
   endPoint: {x: 6, y: 11}
+  anim: {fileID: 0}
   speed: 1
   attack: {fileID: 0}
   precision: 4

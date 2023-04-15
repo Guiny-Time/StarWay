@@ -7,6 +7,7 @@ public class Move : ActionNode
 {
     public Vector2 startPoint;
     public Vector2 endPoint;
+    public Animator anim;
     private Vector2 temp;
     // 速度
     public float speed;
@@ -26,6 +27,7 @@ public class Move : ActionNode
     private int count = 0;
     protected override void OnStart() {
         var transform = context.transform;
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         attack = transform.GetChild(transform.childCount - 1).gameObject;
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
     }

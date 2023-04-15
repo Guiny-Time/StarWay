@@ -19,6 +19,7 @@ public class MoveBack : ActionNode
     public int angle;   //45
     // 半径
     public float radius;    //2.5
+    public Animator anim;
 
     // 路径
     private List<AStarNode> result;
@@ -27,6 +28,8 @@ public class MoveBack : ActionNode
     private bool inBack = true;
     protected override void OnStart() {
         var transform = context.transform;
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        anim.Play("EneCh1walk");
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         attack = transform.GetChild(transform.childCount - 1).gameObject;
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);

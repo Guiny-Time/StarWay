@@ -115,7 +115,7 @@ public class PlayerCtl : MonoBehaviour
         }
         else
         {
-            // transform.rotation = Quaternion.LookRotation(NextPos - transform.position, Vector3.forward); //转向
+            transform.rotation = Quaternion.LookRotation(NextPos - transform.position, Vector3.up); //转向
             transform.position = Vector3.MoveTowards(transform.position, NextPos, speed * Time.deltaTime);
         }
         

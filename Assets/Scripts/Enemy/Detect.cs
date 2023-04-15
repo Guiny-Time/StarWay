@@ -11,12 +11,17 @@ public class Detect : ActionNode
     public int angle;   //45
     // 半径
     public float radius;    //2.5
-    protected override void OnStart() {
+    public Animator anim;
+    protected override void OnStart()
+    {
+        var transform = context.transform;
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     protected override void OnStop()
     {
         ChangeColor();
+        anim.Play("EneCh1Run");
     }
 
     protected override State OnUpdate() {

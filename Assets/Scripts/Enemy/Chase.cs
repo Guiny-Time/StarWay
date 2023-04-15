@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
+using UnityEditor.Timeline.Actions;
 using UnityEngine.SceneManagement;
 
 public class Chase : ActionNode
 {
     public Vector2 startPoint;
     public Vector2 endPoint;
+    public Animator anim;
     private Vector2 temp;
     // 速度
     public float speed;
@@ -24,6 +26,7 @@ public class Chase : ActionNode
     protected override void OnStart() {
         transform = context.transform;
         player = GameObject.FindWithTag("Player");
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
         result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
@@ -46,9 +49,8 @@ public class Chase : ActionNode
 
             if (Vector3.Distance(transform.position, player.transform.position) <= 1)
             {
-                EventCenter.GetInstance().Clear();
-                blackboard.detectPlayer = false;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
+                anim.Play("EneCh1Attack");
+                LoadScene();
                 return State.Success;
             }
 
@@ -62,6 +64,13 @@ public class Chase : ActionNode
         }
 
         return State.Running;
+    }
+
+    void LoadScene()
+    {
+        EventCenter.GetInstance().Clear();
+        blackboard.detectPlayer = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
     }
     
     /// <summary>

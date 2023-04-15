@@ -9,6 +9,7 @@ public class Alumb : ActionNode
     // 运动通用参数
     public Vector2 startPoint;
     public Vector2 endPoint;
+    public Animator anim;
     private Vector2 temp;
     
     // 追击参数
@@ -33,8 +34,8 @@ public class Alumb : ActionNode
     protected override void OnStart()
     {
         transform = context.transform;
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         count = 0;
-        
     }
 
     protected override void OnStop()
@@ -53,6 +54,7 @@ public class Alumb : ActionNode
             endPoint = new Vector2(Mathf.Round(alumbObj.transform.position.z), Mathf.Round(alumbObj.transform.position.x));
             result = AStarMgr.GetInstance().FindPath(startPoint,endPoint);
             count = 0;
+            anim.Play("EneCh1Run");
             ChangeColor();
             Debug.Log(result.Count);
             Debug.Log("success");
