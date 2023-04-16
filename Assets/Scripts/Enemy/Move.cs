@@ -29,7 +29,7 @@ public class Move : ActionNode
         var transform = context.transform;
         anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         attack = transform.GetChild(transform.childCount - 1).gameObject;
-        result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
+        result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
     }
 
     protected override void OnStop() {
@@ -37,6 +37,7 @@ public class Move : ActionNode
 
     protected override State OnUpdate()
     {
+        // Debug.Log(blackboard.detectPlayer + " in Move");
         var t = context.transform;
         if (blackboard.detectPlayer)
         {

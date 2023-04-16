@@ -18,6 +18,7 @@ public class Door : MonoBehaviour
     }
     
     public void OnTriggerEnter(Collider collider){
+        print("door catch " + collider.name);
         if (SaveMgr.GetInstance().LastChapter() && SaveMgr.GetInstance().LastLevel())
         {
             // 完结了，看看到时候搞个结束Timeline吧

@@ -52,7 +52,7 @@ public class Alumb : ActionNode
             Debug.Log(o.name);
             startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
             endPoint = new Vector2(Mathf.Round(alumbObj.transform.position.z), Mathf.Round(alumbObj.transform.position.x));
-            result = AStarMgr.GetInstance().FindPath(startPoint,endPoint);
+            result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
             count = 0;
             anim.Play("EneCh1Run");
             ChangeColor();
@@ -67,6 +67,7 @@ public class Alumb : ActionNode
         if (EnemyMgr.GetInstance().DetectPlayer(precision,angle,radius,transform))
         {
             blackboard.detectPlayer = true;
+            ChangeColor();
             return State.Failure;
         }
         if (magicTrigger && !blackboard.inAlumb)

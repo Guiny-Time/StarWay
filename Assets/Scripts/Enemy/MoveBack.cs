@@ -32,7 +32,8 @@ public class MoveBack : ActionNode
         anim.Play("EneCh1walk");
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         attack = transform.GetChild(transform.childCount - 1).gameObject;
-        result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
+        result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
+        count = 0;
     }
 
     protected override void OnStop()
@@ -43,11 +44,17 @@ public class MoveBack : ActionNode
 
     protected override State OnUpdate()
     {
+        Debug.Log("aaabbb");
+        if (result == null)
+        {
+            count = 0;
+            blackboard.inBack = true;
+        }
         var t = context.transform;
-        if (blackboard.detectPlayer)
+        /*if (blackboard.detectPlayer)
         {
             return State.Failure;
-        }
+        }*/
         if (EnemyMgr.GetInstance().DetectPlayer(precision, angle, radius, t))
         {
             blackboard.detectPlayer = true;

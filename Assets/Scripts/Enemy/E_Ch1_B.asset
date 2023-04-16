@@ -45,7 +45,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a30ea6c0659cc4846a1fd9e3d93cfdf6
-  position: {x: -115.72319, y: 361.6}
+  position: {x: -115.599945, y: 361.59988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   endPoint: {x: 6, y: 5}
-  speed: 1.5
+  speed: 1
   attack: {fileID: 0}
   precision: 4
   angle: 45
@@ -157,7 +157,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a167b6becc5241e4aae4f26148374a15
-  position: {x: -190.92322, y: 187.20001}
+  position: {x: -190.79999, y: 187.20001}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   drawGizmos: 0
   child: {fileID: 2812328631599928220}
   restartOnSuccess: 1
-  restartOnFailure: 0
+  restartOnFailure: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b24d8101d1009094abe40ceb24a1b58e
-  position: {x: 7.999996, y: 211.20007}
+  position: {x: 8.000093, y: 211.19997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -305,6 +305,6 @@ MonoBehaviour:
   anim: {fileID: 0}
   speed: 1
   attack: {fileID: 0}
-  precision: 4
+  precision: 8
   angle: 45
   radius: 2.5

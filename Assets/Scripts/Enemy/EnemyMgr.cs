@@ -46,7 +46,6 @@ public class EnemyMgr : BaseManager<EnemyMgr>
         if (GenerateRay(0, radius, t))
         {
             return true;
-            
         }
         for (int i = 1; i < precision; i++)
         {
@@ -66,14 +65,21 @@ public class EnemyMgr : BaseManager<EnemyMgr>
     public bool GenerateRay(int angle, float radius, Transform t)
     {
         RaycastHit hit;
+        Debug.DrawRay(t.position, Vector3.Normalize(Quaternion.Euler(0, angle, 0) * t.forward) * radius,Color.red);
         if (Physics.Raycast(t.position, Vector3.Normalize(Quaternion.Euler(0, angle, 0) * t.forward), out hit,
                 radius) && hit.collider.CompareTag("Player"))
         {
+            Debug.Log("Find Orion!");
             return true;
         }
 
         return false;
 
+    }
+
+    public void GetBlockIndex()
+    {
+        RaycastHit hit;
     }
     
 }

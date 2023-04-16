@@ -21,16 +21,18 @@ public class Chase : ActionNode
     // 路径
     private List<AStarNode> result = new List<AStarNode>();
     // 路径计数
-    private int count = 0;
+    private int count = 1;
     private Transform transform;
     protected override void OnStart() {
         transform = context.transform;
         player = GameObject.FindWithTag("Player");
+        Debug.Log(player.name);
+        Debug.Log(player.transform.position.x + ", " + player.transform.position.y + ", " + player.transform.position.z);
         anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
-        result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
-        
+        result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
+        count = 1;
         ChangeColorRed(transform);
     }
 
@@ -41,11 +43,14 @@ public class Chase : ActionNode
     }
 
     protected override State OnUpdate() {
+        // Debug.Log(blackboard.detectPlayer);
         if (blackboard.detectPlayer)
         {
             startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
             endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
-            result = AStarMgr.GetInstance().FindPath(startPoint, endPoint);
+            result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
+            Debug.Log(endPoint);
+            Debug.Log(result.Count);
 
             if (Vector3.Distance(transform.position, player.transform.position) <= 1)
             {
@@ -60,7 +65,6 @@ public class Chase : ActionNode
                 return State.Success;
             }
             MoveGameObject();
-            return State.Running;
         }
 
         return State.Running;
