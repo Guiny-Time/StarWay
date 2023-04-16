@@ -8,6 +8,7 @@ public class PlayerCtl : MonoBehaviour
 {
     public int speed;
     public int magic;
+    public Animator anim;
 
     private List<AStarNode> result = new List<AStarNode>();
     private List<AStarNode> temp_result = new List<AStarNode>();
@@ -22,6 +23,7 @@ public class PlayerCtl : MonoBehaviour
     {
         PlayerMgr.GetInstance().SetMagic(magic);
         PlayerMgr.GetInstance().SetSpeed(speed);
+        anim.Play("stand");
     }
 
     // Start is called before the first frame update
@@ -39,8 +41,15 @@ public class PlayerCtl : MonoBehaviour
             ChooseBlock();      // choose move-to block
         }
 
-        if (moveState) { Moving(); }     // moving
-        
+        if (moveState) { 
+            Moving();   // moving
+            anim.SetBool("running", true);
+        }
+        else
+        {
+            anim.SetBool("running", false);
+        }
+
         // find fath
         if (pos != null)
         {
@@ -105,7 +114,7 @@ public class PlayerCtl : MonoBehaviour
 
     void Moving()
     {
-        Vector3 NextPos = new Vector3(temp_result[stepCount].y, 0.25f, temp_result[stepCount].x);
+        Vector3 NextPos = new Vector3(temp_result[stepCount].y, -0.4f, temp_result[stepCount].x);
         if(transform.position == NextPos){
             stepCount++;
             if(stepCount + 1 > temp_result.Count)
