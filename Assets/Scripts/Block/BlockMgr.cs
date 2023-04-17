@@ -39,12 +39,10 @@ public class BlockMgr : BaseManager<BlockMgr>
     {
         if (state == 1)
         {
-            block.transform.position += new Vector3(0,1,0);
             AStarMgr.GetInstance().ChangeBlockState(block.transform.position.x, block.transform.position.z,0);
         }
         else
         {
-            block.transform.position -= new Vector3(0,1,0);
             AStarMgr.GetInstance().ChangeBlockState(block.transform.position.x, block.transform.position.z,1);
         }
     }

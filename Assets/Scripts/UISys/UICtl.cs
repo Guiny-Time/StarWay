@@ -29,7 +29,6 @@ public class UICtl : SingletonMono<UICtl>
         UIAnim = this.gameObject.GetComponent<Animator>();
         T_ChapterID = GameObject.Find("T_ChapterID").GetComponent<TMP_Text>();
         T_ChapterName = GameObject.Find("T_ChapterName").GetComponent<TMP_Text>();
-        // Cursor.lockState = CursorLockMode.Confined;
         // MusicMgr.GetInstance().SetBKObject(bgm);
     }
 
@@ -69,7 +68,6 @@ public class UICtl : SingletonMono<UICtl>
             Time.timeScale = 1;
             if(PanelList.Count == 0)
                 isOpen = false;
-            // Cursor.lockState = CursorLockMode.Confined;
         }
         // 底层面板关闭时，按esc打开
         else
@@ -78,7 +76,6 @@ public class UICtl : SingletonMono<UICtl>
             PanelList.Push(panelElement[0]);
             PanelList.Peek().SetActive(true);
             isOpen = true;
-            // Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -102,7 +99,6 @@ public class UICtl : SingletonMono<UICtl>
     public void ReloadLevel()
     {
         Time.timeScale = 1;
-        EventCenter.GetInstance().Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
     }
 
@@ -113,7 +109,6 @@ public class UICtl : SingletonMono<UICtl>
     {
         Debug.Log("重新加载章节");
         Time.timeScale = 1;
-        EventCenter.GetInstance().Clear();
         PlayerPrefs.SetString("Progress","Chap" + PlayerPrefs.GetInt("Chapter")+"-1");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
     }
@@ -145,7 +140,6 @@ public class UICtl : SingletonMono<UICtl>
         PanelList.Pop();
         isOpen = false;
         Time.timeScale = 1;
-        // Cursor.lockState = CursorLockMode.Confined;        
     }
 
     /// <summary>

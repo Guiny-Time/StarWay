@@ -39,5 +39,13 @@ public class BlockCtl : MonoBehaviour
     public void SetState(int s)
     {
         state = s;
+        if (state == 1)
+        {
+            transform.position -= new Vector3(0,1,0);
+        }
+        else
+        {
+            transform.position += new Vector3(0,1,0);
+        }
     }
 }

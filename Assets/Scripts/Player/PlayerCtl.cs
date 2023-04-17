@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TheKiwiCoder;
 using UnityEngine;
 
 public class PlayerCtl : MonoBehaviour
@@ -17,7 +17,8 @@ public class PlayerCtl : MonoBehaviour
     private int stepCount = 1;  // foot step
     private Vector2 temp;
     private GameObject pos; // mouse choose obj
-
+    
+    
     
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class PlayerCtl : MonoBehaviour
     void Start()
     {
         moveState = false;
+        
     }
 
     // Update is called once per frame

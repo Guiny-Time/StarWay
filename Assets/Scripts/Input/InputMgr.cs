@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using Object = System.Object;
 
 public class InputMgr : SingletonMono<InputMgr>
 {
@@ -11,7 +13,8 @@ public class InputMgr : SingletonMono<InputMgr>
     public Animator chapter;
     public Material magicMat;
     public LineRenderer lr;
-    
+    public UnityEvent<String> e;
+
     private Vector3 mousePosition;
     private Ray ray;
     private RaycastHit hit;
@@ -89,17 +92,29 @@ public class InputMgr : SingletonMono<InputMgr>
 
     public void InMagic()
     {
+        
         if(Input.GetMouseButtonDown(0))
         {
-            print("对该方块施展重力魔法：" + chooseObj.name);
             GameObject block = GetCurrentMouse();
+            print("对该方块施展重力魔法：" + block.name);
             BlockCtl bCtl = block.GetComponent<BlockCtl>();
             int blockState = bCtl.GetState();
-            // gravity magic
-            BlockMgr.GetInstance().UseGravityMagic(block, blockState);
-            EventCenter.GetInstance().EventTrigger("UseMagic", chooseObj);
+            print(blockState);
+            if (blockState == 0)    //原本不可通行
+            {
+                Debug.Log(AStarMgr.GetInstance().GetBlockState(block.transform.position.x, block.transform.position.z));
+                e.Invoke(block.name);
+                BlockMgr.GetInstance().UseGravityMagic(block, blockState);
+                Debug.Log(AStarMgr.GetInstance().GetBlockState(block.transform.position.x, block.transform.position.z));
+                bCtl.SetState(1);
+            }
+            else
+            {
+                Debug.Log("1: 原本可通行：" + AStarMgr.GetInstance().GetBlockState(block.transform.position.x, block.transform.position.z));
+                e.Invoke(block.name);
+                bCtl.SetState(0);
+            }
             magicMat.SetFloat("_Magic", magicMat.GetFloat("_Magic") - 0.3f);
-            bCtl.SetState(1^blockState);
             inMagic = false;
         }
 

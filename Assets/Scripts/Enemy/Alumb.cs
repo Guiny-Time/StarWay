@@ -15,7 +15,7 @@ public class Alumb : ActionNode
     // 追击参数
     public float speed;
     private bool magicTrigger;
-    private GameObject alumbObj;
+    private Transform alumbObj;
     
     // 检测精度
     public int precision = 4;
@@ -46,19 +46,11 @@ public class Alumb : ActionNode
     }
 
     protected override State OnUpdate() {
-        EventCenter.GetInstance().AddEventListener("UseMagic", (GameObject o) => {
-            magicTrigger = true;
-            alumbObj = o;
-            Debug.Log(o.name);
-            startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
-            endPoint = new Vector2(Mathf.Round(alumbObj.transform.position.z), Mathf.Round(alumbObj.transform.position.x));
-            result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
-            count = 0;
-            anim.Play("EneCh1Run");
-            ChangeColor();
-            Debug.Log(result.Count);
-            Debug.Log("success");
-        });
+        if (blackboard.alumbTrig)
+        {
+            EventTrig(blackboard.alumbObj);
+            blackboard.alumbTrig = false;
+        }
 
         if (blackboard.detectPlayer)
         {
@@ -81,6 +73,28 @@ public class Alumb : ActionNode
             return State.Success;
         }
         return State.Failure;
+    }
+
+    public void EventTrig(Transform o)
+    {
+        magicTrigger = true;
+        transform = context.transform;
+        startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
+        endPoint = new Vector2(o.position.z, o.position.x);
+        if (blackboard.fuck)    //之前是1，很可能被改成0了
+        {
+            BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 0);  // 先设成1
+            result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
+            BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 1);
+            blackboard.fuck = false;
+        }
+        else
+        {
+            result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
+        }
+        count = 0;
+        anim.Play("EneCh1Run");
+        ChangeColor();
     }
 
     /// <summary>

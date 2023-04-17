@@ -189,7 +189,7 @@ public class AStarMgr : BaseManager<AStarMgr>
             endPos.x < 0 || endPos.x >= _mapW ||
             endPos.y < 0 || endPos.y >= _mapH)
         {
-            // Debug.Log("开始或者结束点在地图格子范围外");
+            Debug.Log("开始或者结束点在地图格子范围外");
             return null;
         }
         
@@ -200,7 +200,7 @@ public class AStarMgr : BaseManager<AStarMgr>
         if (start.type == 0 ||
             end.type == 0)
         {
-            // Debug.Log("开始或者结束点不可通行");
+            Debug.Log("开始或者结束点不可通行");
             return null;
         }
 
@@ -232,7 +232,7 @@ public class AStarMgr : BaseManager<AStarMgr>
             //死路判断 开启列表为空 都还没有找到终点 就认为是死路
             if (openList.Count == 0)
             {
-                // Debug.Log("死路");
+                Debug.Log("死路");
                 return null;
             }
 

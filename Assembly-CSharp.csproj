@@ -70,7 +70,6 @@
      <Compile Include="Assets\Scripts\Enemy\Detect.cs" />
      <Compile Include="Assets\Scripts\UISys\MusicCtl.cs" />
      <Compile Include="Assets\Scripts\UISys\UICtl.cs" />
-     <Compile Include="Assets\Scripts\Base\EventCenter.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8\source" />
@@ -80,8 +79,11 @@
      <Folder Include="Assets\Art\Models\low-poly-robot" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Resources\Prefab" />
+     <Folder Include="Assets\Mirza Fire Asset\Materials" />
      <Folder Include="Assets\Scripts\Save" />
+     <Folder Include="Assets\Mirza Fire Asset\Textures" />
      <Folder Include="Assets\Art\Models" />
+     <Folder Include="Assets\Art\007_Heavy Storm" />
      <Folder Include="Assets\Scripts\Base" />
      <Folder Include="Assets\Scripts\Map" />
      <Folder Include="Assets\Presets" />
@@ -96,6 +98,7 @@
      <Folder Include="Assets\Scripts\Utils" />
      <Folder Include="Assets\Art\Animations" />
      <Folder Include="Assets\Scenes\Open" />
+     <Folder Include="Assets\Mirza Fire Asset" />
      <Folder Include="Assets\Scripts\Block" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8" />

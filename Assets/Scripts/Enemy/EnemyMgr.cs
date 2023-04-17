@@ -21,8 +21,6 @@ public class EnemyMgr : BaseManager<EnemyMgr>
 
     // 路径
     private List<AStarNode> result = new List<AStarNode>();
-    // 路径计数
-    private int count = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -77,10 +75,5 @@ public class EnemyMgr : BaseManager<EnemyMgr>
 
     }
 
-    public void GetBlockIndex()
-    {
-        RaycastHit hit;
-    }
-    
 }
  
