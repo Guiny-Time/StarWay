@@ -22,14 +22,13 @@ public class EnemyCh1 : MonoBehaviour
         print("2: 触发警报");
         Debug.Log(s);
         
-        bt.tree.treeState = Node.State.Failure;
-        // bt.tree.blackboard.inBack = true;
+        bt.tree.treeState = Node.State.Success;
+        bt.tree.blackboard.inBack = true;
         bt.tree.blackboard.alumbObj = GameObject.Find(s).transform;
         if (AStarMgr.GetInstance().GetBlockState(bt.tree.blackboard.alumbObj.position.x, bt.tree.blackboard.alumbObj.position.z) == 1)
         {
             bt.tree.blackboard.fuck = true;
         }
-        Debug.Log("触发坐标：" + bt.tree.blackboard.alumbObj.position.x + ", " + bt.tree.blackboard.alumbObj.position.z);
         bt.tree.blackboard.alumbTrig = true;
     }
 

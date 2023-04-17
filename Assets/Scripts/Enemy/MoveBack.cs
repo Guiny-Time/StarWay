@@ -33,6 +33,7 @@ public class MoveBack : ActionNode
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         attack = transform.GetChild(transform.childCount - 1).gameObject;
         result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
+        blackboard.inBack = false;
         count = 0;
     }
 
@@ -45,6 +46,7 @@ public class MoveBack : ActionNode
     protected override State OnUpdate()
     {
         Debug.Log("aaabbb");
+        Debug.Log(blackboard.inBack);
         if (result == null)
         {
             count = 0;

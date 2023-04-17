@@ -21,10 +21,13 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   endPoint: {x: 6, y: 5}
-  speed: 1
+  speed: 1.5
   attack: {fileID: 0}
   precision: 4
   angle: 45
@@ -45,16 +48,19 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a30ea6c0659cc4846a1fd9e3d93cfdf6
-  position: {x: -115.599945, y: 361.59988}
+  position: {x: -115.59994, y: 361.59998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   endPoint: {x: 6, y: 5}
-  speed: 1
+  speed: 1.5
   attack: {fileID: 0}
   precision: 4
   angle: 45
@@ -81,6 +87,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
@@ -111,6 +120,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   child: {fileID: -323191929548767548}
@@ -129,12 +141,15 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f5bb381a8f2521f44a3e258336fcdd6a
-  position: {x: 158.46597, y: 361.6}
+  position: {x: 158.4001, y: 361.59998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 0, y: 0}
@@ -163,6 +178,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   children:
@@ -189,6 +207,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   child: {fileID: 2812328631599928220}
@@ -224,6 +245,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
 --- !u!114 &1688398309857585670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +269,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   children:
@@ -271,6 +298,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   children:
@@ -298,6 +328,9 @@ MonoBehaviour:
     inAlumb: 0
     inBack: 0
     detectPlayer: 0
+    alumbTrig: 0
+    alumbObj: {fileID: 0}
+    fuck: 0
   description: 
   drawGizmos: 0
   startPoint: {x: 6, y: 5}

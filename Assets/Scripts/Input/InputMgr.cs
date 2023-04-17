@@ -99,18 +99,14 @@ public class InputMgr : SingletonMono<InputMgr>
             print("对该方块施展重力魔法：" + block.name);
             BlockCtl bCtl = block.GetComponent<BlockCtl>();
             int blockState = bCtl.GetState();
-            print(blockState);
             if (blockState == 0)    //原本不可通行
             {
-                Debug.Log(AStarMgr.GetInstance().GetBlockState(block.transform.position.x, block.transform.position.z));
                 e.Invoke(block.name);
                 BlockMgr.GetInstance().UseGravityMagic(block, blockState);
-                Debug.Log(AStarMgr.GetInstance().GetBlockState(block.transform.position.x, block.transform.position.z));
                 bCtl.SetState(1);
             }
             else
             {
-                Debug.Log("1: 原本可通行：" + AStarMgr.GetInstance().GetBlockState(block.transform.position.x, block.transform.position.z));
                 e.Invoke(block.name);
                 bCtl.SetState(0);
             }
