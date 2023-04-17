@@ -31,7 +31,6 @@ public class PlayerCtl : MonoBehaviour
     void Start()
     {
         moveState = false;
-        
     }
 
     // Update is called once per frame

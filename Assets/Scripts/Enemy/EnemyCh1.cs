@@ -19,9 +19,6 @@ public class EnemyCh1 : MonoBehaviour
 
     public void Alumb(string s)
     {
-        print("2: 触发警报");
-        Debug.Log(s);
-        
         bt.tree.treeState = Node.State.Success;
         bt.tree.blackboard.inBack = true;
         bt.tree.blackboard.alumbObj = GameObject.Find(s).transform;
@@ -30,10 +27,5 @@ public class EnemyCh1 : MonoBehaviour
             bt.tree.blackboard.fuck = true;
         }
         bt.tree.blackboard.alumbTrig = true;
-    }
-
-    public void Test(string s)
-    {
-        Debug.Log(s);
     }
 }

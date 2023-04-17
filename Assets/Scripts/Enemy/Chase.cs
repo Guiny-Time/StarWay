@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
 using UnityEditor.Timeline.Actions;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Chase : ActionNode
@@ -17,22 +18,25 @@ public class Chase : ActionNode
     public float radius;
 
     private GameObject player;
+    private Animator playerAnim;
 
     // 路径
     private List<AStarNode> result = new List<AStarNode>();
     // 路径计数
     private int count = 1;
+    private float timer;    // 加载场景的计时器
     private Transform transform;
     protected override void OnStart() {
         transform = context.transform;
         player = GameObject.FindWithTag("Player");
-        Debug.Log(player.name);
-        Debug.Log(player.transform.position.x + ", " + player.transform.position.y + ", " + player.transform.position.z);
+        playerAnim = player.GetComponentInParent<Animator>();
+        
         anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
         result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
         count = 1;
+        timer = 0;
         ChangeColorRed(transform);
     }
 
@@ -43,20 +47,26 @@ public class Chase : ActionNode
     }
 
     protected override State OnUpdate() {
-        // Debug.Log(blackboard.detectPlayer);
         if (blackboard.detectPlayer)
         {
             startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
             endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
             result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
-            Debug.Log(endPoint);
-            Debug.Log(result.Count);
 
             if (Vector3.Distance(transform.position, player.transform.position) <= 1)
             {
-                anim.Play("EneCh1Attack");
-                LoadScene();
-                return State.Success;
+                anim.SetBool("attack",true);
+                // anim.Play("EneCh1Attack");
+                playerAnim.SetBool("beAttack", true);
+                if (timer < 1.5f)
+                {
+                    timer += Time.deltaTime;
+                }
+
+                if (timer > 1.5f)
+                {
+                    LoadScene();
+                }
             }
 
             if (Vector3.Distance(transform.position, player.transform.position) > radius + 1.5f)
@@ -69,10 +79,12 @@ public class Chase : ActionNode
 
         return State.Running;
     }
-
+    
+    
     void LoadScene()
     {
         blackboard.detectPlayer = false;
+        timer = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name,LoadSceneMode.Single);
     }
     
