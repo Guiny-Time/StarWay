@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\BehaviourTree.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\CompositeNode.cs" />
      <Compile Include="Assets\Scripts\Enemy\Alumb.cs" />
+     <Compile Include="Assets\Scripts\Utils\TimelineUnit.cs" />
      <Compile Include="Assets\Scripts\Enemy\Move.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\Blackboard.cs" />
      <Compile Include="Assets\Scripts\Input\InputMgr.cs" />
@@ -95,9 +96,6 @@
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Composites\RandomSelector.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\BehaviourTreeRunner.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
-     <Compile Include="Assets\Resources\Prefab\NewPlayableAsset.cs" />
-     <Compile Include="Assets\Resources\Prefab\NewPlayableBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Utils\TimelineUnit.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8\source" />
      <None Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\ScriptTemplates\101-BehaviourTree__CompositeNode-NewCompositeNode.cs.txt" />

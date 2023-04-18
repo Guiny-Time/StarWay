@@ -8,6 +8,7 @@ public class PlayerCtl : MonoBehaviour
 {
     public int speed;
     public int magic;
+    public int magicArea;
     public Animator anim;
 
     private List<AStarNode> result = new List<AStarNode>();
@@ -24,6 +25,7 @@ public class PlayerCtl : MonoBehaviour
     {
         PlayerMgr.GetInstance().SetMagic(magic);
         PlayerMgr.GetInstance().SetSpeed(speed);
+        PlayerMgr.GetInstance().SetArea(magicArea);
         anim.Play("stand");
     }
 
@@ -37,8 +39,9 @@ public class PlayerCtl : MonoBehaviour
     void Update()
     {
         InputMgr.GetInstance().UIListener(result);
-        if (!UICtl.GetInstance().GetPanelState())
+        if (!UICtl.GetInstance().GetPanelState() && !(InputMgr.GetInstance().GetMagicState() && !InputMgr.GetInstance().DetermineDistance()))
         {
+            print("haha");
             ChooseBlock();      // choose move-to block
         }
 
@@ -51,7 +54,7 @@ public class PlayerCtl : MonoBehaviour
             anim.SetBool("running", false);
         }
 
-        // find fath
+        // find path
         if (pos != null)
         {
             result = AStarMgr.GetInstance().FindPath(new Vector2( Mathf.Round(transform.position.z), Mathf.Round(transform.position.x)),
@@ -62,18 +65,16 @@ public class PlayerCtl : MonoBehaviour
         if (InputMgr.GetInstance().GetMagicState())
         {
             InputMgr.GetInstance().InMagic();
-        }
-        else
+        } 
+        else 
         {
             InputMgr.GetInstance().DrawLine(result);
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0)&&(result.Count != 0 && !UICtl.GetInstance().GetPanelState()))
             {
-                if (result.Count != 0 && !UICtl.GetInstance().GetPanelState())
-                {
-                    temp_result = result;
-                    stepCount = 1; 
-                    moveState = true;
-                }
+                temp_result = result;
+                stepCount = 1; 
+                moveState = true;
+                
             }
         }
     }

@@ -130,13 +130,13 @@ public class AStarMgr : BaseManager<AStarMgr>
             //下 x y + 1
             FindNearlyNodeToOpenList(start.x, start.y + 1, 1, start, end);
             // 左上
-            FindNearlyNodeToOpenList(start.x-1, start.y - 1, 1.41f, start, end);
+            FindNearlyNodeToOpenList(start.x-1, start.y - 1, 1.91f, start, end);
             // 左下
-            FindNearlyNodeToOpenList(start.x - 1, start.y + 1, 1.41f, start, end);
+            FindNearlyNodeToOpenList(start.x - 1, start.y + 1, 1.91f, start, end);
             // 右上
-            FindNearlyNodeToOpenList(start.x + 1, start.y - 1, 1.41f, start, end);
+            FindNearlyNodeToOpenList(start.x + 1, start.y - 1, 1.91f, start, end);
             // 右下
-            FindNearlyNodeToOpenList(start.x + 1, start.y + 1, 1.41f, start, end);
+            FindNearlyNodeToOpenList(start.x + 1, start.y + 1, 1.91f, start, end);
 
             //死路判断 开启列表为空 都还没有找到终点 就认为是死路
             if (openList.Count == 0)

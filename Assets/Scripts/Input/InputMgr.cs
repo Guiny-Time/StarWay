@@ -21,7 +21,11 @@ public class InputMgr : SingletonMono<InputMgr>
     private GameObject mapCollider;
     private GameObject chooseObj; // mouse choose obj
     private GameObject highlightBlocks = null;
+    
     private bool inMagic;   // whether in magic state
+    private Vector2 pl_p;   // player position
+    private Vector2 bl_p;   // block position
+    private float d;    // distance between p and b
 
     private void OnEnable()
     {
@@ -34,6 +38,11 @@ public class InputMgr : SingletonMono<InputMgr>
         chapter.Play("OpenChapter");
         magicMat.SetFloat("_Magic", 0);
         inMagic = false;
+    }
+
+    private void Start()
+    {
+        d = PlayerMgr.GetInstance().GetArea() * Mathf.Sqrt(2);
     }
 
     public void UIListener(List<AStarNode> result)
@@ -84,21 +93,52 @@ public class InputMgr : SingletonMono<InputMgr>
 
     }
 
+    public bool DetermineDistance()
+    {
+        GameObject block = GetCurrentMouse();
+        bl_p = new Vector2(block.transform.position.x, block.transform.position.z);
+        
+        Transform pl_t = GameObject.Find("Orion").transform;
+        pl_p = new Vector2(pl_t.position.x, pl_t.position.z);
+        if (Vector2.Distance(pl_p, bl_p) > d)
+        {
+            return false;   // 不显示方块
+        }
+
+        return true;
+    }
 
     public bool GetMagicState()
     {
         return inMagic;
     }
 
-    public void InMagic()
+    public void SetArea(int distance)
     {
         
+    }
+
+    public void InMagic()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            print("退出施法状态");
+            inMagic = false;
+        }
+        
+        GameObject block = GetCurrentMouse();
+        if (Vector2.Distance(pl_p, bl_p) > d)
+        {
+            return;
+        }
         if(Input.GetMouseButtonDown(0))
         {
-            GameObject block = GetCurrentMouse();
+            block = GetCurrentMouse();
+            // if(Vector3.Distance(block,))
             print("对该方块施展重力魔法：" + block.name);
             BlockCtl bCtl = block.GetComponent<BlockCtl>();
             int blockState = bCtl.GetState();
+            
             if (blockState == 0)    //原本不可通行
             {
                 e.Invoke(block.name);
@@ -110,13 +150,8 @@ public class InputMgr : SingletonMono<InputMgr>
                 e.Invoke(block.name);
                 bCtl.SetState(0);
             }
+            
             magicMat.SetFloat("_Magic", magicMat.GetFloat("_Magic") - 0.3f);
-            inMagic = false;
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            print("退出施法状态");
             inMagic = false;
         }
     }
@@ -141,6 +176,7 @@ public class InputMgr : SingletonMono<InputMgr>
     void GravityMagic()
     {
         inMagic = true;
+        print("Gravity Magic");
         chooseObj = GetCurrentMouse();
         // clear highlight
         if (highlightBlocks != null)

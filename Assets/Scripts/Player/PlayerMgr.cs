@@ -6,18 +6,7 @@ public class PlayerMgr : BaseManager<PlayerMgr>
 {
     private int magic;
     private int speed;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private int area;
 
     public void SetMagic(int magic)
     {
@@ -29,6 +18,11 @@ public class PlayerMgr : BaseManager<PlayerMgr>
         this.speed = speed;
     }
 
+    public void SetArea(int area)
+    {
+        this.area = area;
+    }
+
     public int GetMagic()
     {
         return magic;
@@ -37,6 +31,11 @@ public class PlayerMgr : BaseManager<PlayerMgr>
     public int GetSpeed()
     {
         return speed;
+    }
+
+    public int GetArea()
+    {
+        return area;
     }
     
 

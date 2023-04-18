@@ -10,9 +10,13 @@ public class BlockCtl : MonoBehaviour
     // 地块状态
     private int state;
     private double offset;
+
+    private Outline o;
     // Start is called before the first frame update
     void Start()
     {
+        o = this.GetComponent<Outline>();
+        o.enabled = false;
         state = AStarMgr.GetInstance().GetBlockState(transform.position.x, transform.position.z);
         offset = BlockMgr.GetInstance().NextDouble(0,1);
         InitBlocks();
@@ -27,7 +31,7 @@ public class BlockCtl : MonoBehaviour
         }
         else
         {
-            transform.position += new Vector3(0, (float)offset * 0.5f, 0);
+            transform.position += new Vector3(0, (float)offset * 0.3f, 0);
         }
     }
     
@@ -41,11 +45,11 @@ public class BlockCtl : MonoBehaviour
         state = s;
         if (state == 1)
         {
-            transform.position -= new Vector3(0,1,0);
+            transform.position -= new Vector3(0,1.2f,0);
         }
         else
         {
-            transform.position += new Vector3(0,1,0);
+            transform.position += new Vector3(0,1.2f,0);
         }
     }
 }
