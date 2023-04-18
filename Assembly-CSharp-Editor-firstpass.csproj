@@ -41,16 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeView.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\InspectorView.cs" />
      <Compile Include="Assets\Plugins\ReuseScroller\Editor\BaseCellEditor.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\NodeView.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\DoubleClickSelection.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeEditor.cs" />
      <Compile Include="Assets\Plugins\ReuseScroller\Editor\BaseControllerEditor.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\BehaviourTreeSettings.cs" />
-     <Compile Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor\SplitView.cs" />
-     <Folder Include="Assets\Plugins\TheKiwiCoder\BehaviourTree\Scripts\Editor" />
      <Folder Include="Assets\Plugins\ReuseScroller\Editor" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

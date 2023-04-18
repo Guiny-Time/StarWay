@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
-using UnityEditor.Timeline.Actions;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Chase : ActionNode

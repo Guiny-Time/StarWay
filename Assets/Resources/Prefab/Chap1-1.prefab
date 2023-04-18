@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 350}
+  m_AnchoredPosition: {x: -400, y: 350}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7519523792126285839
@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -536,7 +536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -650, y: 350}
+  m_AnchoredPosition: {x: -850, y: 350}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1143592896689124121
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3341,6 +3341,7 @@ GameObject:
   - component: {fileID: 5090340968740097997}
   - component: {fileID: 5090340968740097996}
   - component: {fileID: 5090340968740097995}
+  - component: {fileID: 7724294678208087709}
   m_Layer: 0
   m_Name: star1
   m_TagString: Untagged
@@ -3438,6 +3439,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de03294ac116b40b0cd5823e1d864b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7724294678208087709
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090340968740097998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5090340968762440655
 GameObject:
   m_ObjectHideFlags: 0
@@ -20401,7 +20423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1226623746557563873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20419,7 +20441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 350}
+  m_AnchoredPosition: {x: -400, y: 350}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3143860459080185967
@@ -20450,7 +20472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: watch out!
+  m_text: Be careful, the sound will alert the guards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}
   m_sharedMaterial: {fileID: 5042019701754962985, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}
@@ -20459,7 +20481,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -21027,6 +21049,10 @@ PlayableDirector:
     value: {fileID: 7389244804776600489}
   - key: {fileID: -5750906669149135623, guid: bc2b80735fc075c4e8befa9ddee72416, type: 2}
     value: {fileID: 8960506342125905924}
+  - key: {fileID: 7001364357479614958, guid: bc2b80735fc075c4e8befa9ddee72416, type: 2}
+    value: {fileID: 7724294678208087709}
+  - key: {fileID: 8424760136449512290, guid: bc2b80735fc075c4e8befa9ddee72416, type: 2}
+    value: {fileID: 7427539494706021722}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &9068227858628603528
@@ -21046,7 +21072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1714659001672824357
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21064,7 +21090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 350}
+  m_AnchoredPosition: {x: -400, y: 350}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4235774511903373318
@@ -21095,7 +21121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: collect all stars, open the door
+  m_text: collect all stars, escape the maze
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}
   m_sharedMaterial: {fileID: 5042019701754962985, guid: 27a7118398f7d2248b030b9869e0128d, type: 2}
@@ -21104,7 +21130,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -31838,7 +31864,7 @@ Animator:
   m_GameObject: {fileID: 5366665044231571295}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29329c929a4049d46bfee840c39f53eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -31862,7 +31888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 0.87339544, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0.9101874, b: 0.003120634, a: 1}
   outlineWidth: 10
   precomputeOutline: 1
   bakeKeys:

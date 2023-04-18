@@ -38,10 +38,12 @@ public class UICtl : SingletonMono<UICtl>
         {
             if (SaveMgr.GetInstance().GetProgress()!="Chap0-0")
             {
+                PlayerPrefs.SetInt("firstTime", 0);
                 continueGame.gameObject.SetActive(true);
             }
             else
             {
+                PlayerPrefs.SetInt("firstTime", 1);
                 continueGame.gameObject.SetActive(false);
             }
         }
