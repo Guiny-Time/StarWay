@@ -58,9 +58,9 @@ public class UICtl : SingletonMono<UICtl>
 
     private void Update()
     {
-        if (bgm.volume < 0.8f)
+        if (bgm.volume < 0.9f)
         {
-            bgm.volume = Mathf.Lerp(bgm.volume, 1, 0.01f);
+            bgm.volume = Mathf.Lerp(bgm.volume, 1, 0.005f);
         }
     }
 

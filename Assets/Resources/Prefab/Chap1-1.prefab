@@ -3356,6 +3356,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   chapter: {fileID: 0}
+  music: {fileID: 0}
 --- !u!1 &5090340968740097998
 GameObject:
   m_ObjectHideFlags: 0

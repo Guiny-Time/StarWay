@@ -25,7 +25,7 @@ public class Door : MonoBehaviour
     {
         if (flag)
         {
-            music.volume = Mathf.Lerp(music.volume, 0, 0.01f);
+            music.volume = Mathf.Lerp(music.volume, 0, 0.005f);
         }
     }
     

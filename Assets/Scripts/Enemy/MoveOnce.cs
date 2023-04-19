@@ -33,12 +33,11 @@ public class MoveOnce : ActionNode
         attack = transform.GetChild(transform.childCount - 1).gameObject;
         temp = startPoint;  // 暂存
         result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint[endNum]);
+        Debug.Log(result.Count);
     }
 
     protected override void OnStop()
     {
-        count = 0;
-        endNum = 0;
     }
 
     protected override State OnUpdate()
