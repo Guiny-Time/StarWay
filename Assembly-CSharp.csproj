@@ -95,6 +95,7 @@
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Composites\RandomSelector.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\BehaviourTreeRunner.cs" />
      <Compile Include="Assets\Scripts\AStar\AStarMgr.cs" />
+     <Compile Include="Assets\Scripts\Enemy\MoveOnce.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Art\Models\space-exploration-wlp-series-8\source" />
      <None Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\ScriptTemplates\101-BehaviourTree__CompositeNode-NewCompositeNode.cs.txt" />

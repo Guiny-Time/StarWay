@@ -77,7 +77,8 @@ public class InputMgr : SingletonMono<InputMgr>
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && magicMat.GetFloat("_Magic") > -0.6)
+        // 使用重力魔法
+        if (Input.GetKeyDown(KeyCode.E) && magicMat.GetFloat("_Magic") > -0.6) 
         {
             if (!inMagic)
             {
@@ -163,8 +164,9 @@ public class InputMgr : SingletonMono<InputMgr>
                 e.Invoke(block.name);
                 bCtl.SetState(0);
             }
-            
-            magicMat.SetFloat("_Magic", magicMat.GetFloat("_Magic") - 0.3f);
+
+            float magicCost = (float)0.6 / PlayerMgr.GetInstance().GetMagic();
+            magicMat.SetFloat("_Magic", magicMat.GetFloat("_Magic") - magicCost);
             inMagic = false;
         }
     }
