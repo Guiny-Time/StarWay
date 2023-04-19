@@ -26,6 +26,7 @@ public class InputMgr : SingletonMono<InputMgr>
     private Vector2 pl_p;   // player position
     private Vector2 bl_p;   // block position
     private float d;    // distance between p and b
+    private Vector2[] forbidPoints; // forbidden points(can't use gravity magic)
 
     private void OnEnable()
     {
@@ -43,6 +44,7 @@ public class InputMgr : SingletonMono<InputMgr>
     private void Start()
     {
         d = PlayerMgr.GetInstance().GetArea() * Mathf.Sqrt(2);
+        forbidPoints = PlayerMgr.GetInstance().GetForbidPoints();
     }
 
     public void UIListener(List<AStarNode> result)
@@ -97,14 +99,25 @@ public class InputMgr : SingletonMono<InputMgr>
     {
         GameObject block = GetCurrentMouse();
         bl_p = new Vector2(block.transform.position.x, block.transform.position.z);
-        
         Transform pl_t = GameObject.Find("Orion").transform;
         pl_p = new Vector2(pl_t.position.x, pl_t.position.z);
-        if (Vector2.Distance(pl_p, bl_p) > d)
+        foreach (var points in PlayerMgr.GetInstance().GetForbidPoints())   // 禁止列表
+        {
+            if (bl_p == points)
+            {
+                return false;
+            }
+        }
+        if (Vector2.Distance(pl_p, bl_p) > d)   // 超出距离
         {
             return false;   // 不显示方块
         }
 
+        if (bl_p.x == Mathf.Round(pl_p.x) && bl_p.y == Mathf.Round(pl_p.y) )   // 玩家所处位置
+        {
+            return false;
+        }
+        
         return true;
     }
 
@@ -127,7 +140,7 @@ public class InputMgr : SingletonMono<InputMgr>
         }
         
         GameObject block = GetCurrentMouse();
-        if (Vector2.Distance(pl_p, bl_p) > d)
+        if (!DetermineDistance())
         {
             return;
         }

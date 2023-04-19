@@ -29,7 +29,8 @@ public class UICtl : SingletonMono<UICtl>
         UIAnim = this.gameObject.GetComponent<Animator>();
         T_ChapterID = GameObject.Find("T_ChapterID").GetComponent<TMP_Text>();
         T_ChapterName = GameObject.Find("T_ChapterName").GetComponent<TMP_Text>();
-        // MusicMgr.GetInstance().SetBKObject(bgm);
+        bgm = GameObject.FindWithTag("Music").GetComponent<AudioSource>();
+        bgm.volume = 0f;
     }
 
     public void Start()
@@ -52,6 +53,14 @@ public class UICtl : SingletonMono<UICtl>
         {
             T_ChapterID.text = SaveMgr.GetInstance().GetProgress();
             T_ChapterName.text = PlayerPrefs.GetString(SaveMgr.GetInstance().GetProgress());
+        }
+    }
+
+    private void Update()
+    {
+        if (bgm.volume < 0.8f)
+        {
+            bgm.volume = Mathf.Lerp(bgm.volume, 1, 0.01f);
         }
     }
 

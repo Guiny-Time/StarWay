@@ -18,6 +18,10 @@ public class EnemyCh1 : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// UnityEvent触发警报，执行该方法
+    /// </summary>
+    /// <param name="s"></param>
     public void Alumb(string s)
     {
         bt.tree.treeState = Node.State.Success;

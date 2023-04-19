@@ -7,6 +7,7 @@ public class PlayerMgr : BaseManager<PlayerMgr>
     private int magic;
     private int speed;
     private int area;
+    private Vector2[] forbidPoints;
 
     public void SetMagic(int magic)
     {
@@ -23,6 +24,11 @@ public class PlayerMgr : BaseManager<PlayerMgr>
         this.area = area;
     }
 
+    public void SetForbidPoints(Vector2[] fp)
+    {
+        this.forbidPoints = fp;
+    }
+
     public int GetMagic()
     {
         return magic;
@@ -37,7 +43,11 @@ public class PlayerMgr : BaseManager<PlayerMgr>
     {
         return area;
     }
-    
+
+    public Vector2[] GetForbidPoints()
+    {
+        return forbidPoints;
+    }
 
     public List<AStarNode> FindPathList(Vector2 start, Vector2 end)
     {

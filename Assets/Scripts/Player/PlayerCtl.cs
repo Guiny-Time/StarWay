@@ -10,6 +10,10 @@ public class PlayerCtl : MonoBehaviour
     public int magic;
     public int magicArea;
     public Animator anim;
+    /// <summary>
+    /// 敌对生物起止点、终点等位置，用于禁止对该地块使用重力魔法
+    /// </summary>
+    public Vector2[] forbidPoints;
 
     private List<AStarNode> result = new List<AStarNode>();
     private List<AStarNode> temp_result = new List<AStarNode>();
@@ -18,14 +22,13 @@ public class PlayerCtl : MonoBehaviour
     private int stepCount = 1;  // foot step
     private Vector2 temp;
     private GameObject pos; // mouse choose obj
-    
-    
-    
+
     private void Awake()
     {
         PlayerMgr.GetInstance().SetMagic(magic);
         PlayerMgr.GetInstance().SetSpeed(speed);
         PlayerMgr.GetInstance().SetArea(magicArea);
+        PlayerMgr.GetInstance().SetForbidPoints(forbidPoints);
         anim.Play("stand");
     }
 
@@ -41,7 +44,7 @@ public class PlayerCtl : MonoBehaviour
         InputMgr.GetInstance().UIListener(result);
         if (!UICtl.GetInstance().GetPanelState() && !(InputMgr.GetInstance().GetMagicState() && !InputMgr.GetInstance().DetermineDistance()))
         {
-            print("haha");
+            // print("haha");
             ChooseBlock();      // choose move-to block
         }
 

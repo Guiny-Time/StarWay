@@ -36,6 +36,11 @@ public class Alumb : ActionNode
         transform = context.transform;
         anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         count = 0;
+        /*if (result == null)
+        {
+            // 切换状态
+            blackboard.inAlumb = true;
+        }*/
     }
 
     protected override void OnStop()
@@ -46,28 +51,35 @@ public class Alumb : ActionNode
     }
 
     protected override State OnUpdate() {
+        // 魔法，触发一次特殊寻路事件（确保有result）
         if (blackboard.alumbTrig)
         {
             EventTrig(blackboard.alumbObj);
             blackboard.alumbTrig = false;
         }
 
+        // 发现玩家，直接进入chase状态，这个bool到下一个move节点也会导致节点失败
         if (blackboard.detectPlayer)
         {
             return State.Failure;
         }
+        
+        // 射线发现玩家
         if (EnemyMgr.GetInstance().DetectPlayer(precision,angle,radius,transform))
         {
             blackboard.detectPlayer = true;
             ChangeColor();
             return State.Failure;
         }
+        
+        // 处于被魔法惊动的状态，且还没走到寻路尽头
         if (magicTrigger && !blackboard.inAlumb)
         {
             MoveGameObject();
             return State.Running;
         }
 
+        // 走到寻路尽头了，状态Success
         if (blackboard.inAlumb)
         {
             return State.Success;
@@ -76,7 +88,11 @@ public class Alumb : ActionNode
         return State.Failure;
     }
 
-    public void EventTrig(Transform o)
+    /// <summary>
+    /// 根据魔法传来的block位置的state的不同，设置不同的执行顺序（改状态-寻路或寻路-改状态），返回路径result
+    /// </summary>
+    /// <param name="o"></param>
+    public State EventTrig(Transform o)
     {
         magicTrigger = true;
         transform = context.transform;
@@ -86,16 +102,33 @@ public class Alumb : ActionNode
         {
             BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 0);  // 先设成1
             result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
+            if (result == null)
+            {
+                Debug.Log("dead road.");
+                // 切换状态
+                count = 0;
+                magicTrigger = false;
+                return State.Failure;
+            }
             BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 1);
             blackboard.fuck = false;
         }
         else
         {
             result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
+            if (result == null)
+            {
+                // 切换状态
+                Debug.Log("dead road.");
+                count = 0;
+                magicTrigger = false;
+                return State.Failure;
+            }
         }
         count = 0;
         anim.Play("EneCh1Run");
         ChangeColor();
+        return State.Running;
     }
 
     /// <summary>

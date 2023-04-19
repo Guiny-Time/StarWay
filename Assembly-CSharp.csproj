@@ -61,7 +61,6 @@
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\BehaviourTree.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\CompositeNode.cs" />
      <Compile Include="Assets\Scripts\Enemy\Alumb.cs" />
-     <Compile Include="Assets\Scripts\Utils\TimelineUnit.cs" />
      <Compile Include="Assets\Scripts\Enemy\Move.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Runtime\Blackboard.cs" />
      <Compile Include="Assets\Scripts\Input\InputMgr.cs" />

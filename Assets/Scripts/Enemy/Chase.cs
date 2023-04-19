@@ -56,12 +56,12 @@ public class Chase : ActionNode
                 anim.SetBool("attack",true);
                 // anim.Play("EneCh1Attack");
                 playerAnim.SetBool("beAttack", true);
-                if (timer < 1.5f)
+                if (timer < 1.0f)
                 {
                     timer += Time.deltaTime;
                 }
 
-                if (timer > 1.5f)
+                if (timer > 1.0f)
                 {
                     LoadScene();
                 }
