@@ -7,13 +7,12 @@ public class MoveOnce : ActionNode
 {
     public Vector2 startPoint;
     public Vector2[] endPoint;
-    public Animator anim;
-    private Vector2 temp;
+    
+    public EnemyCh1 e_ctl;
+    
     // 速度
     public float speed;
-    // 攻击范围obj
-    public GameObject attack;
-    
+
     // 检测精度
     public int precision = 4;
     // 检测角度
@@ -27,11 +26,11 @@ public class MoveOnce : ActionNode
     private int endNum = 0; // 第几个终点
     // 路径计数
     private int count = 0;
-    protected override void OnStart() {
-        var transform = context.transform;
-        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
-        attack = transform.GetChild(transform.childCount - 1).gameObject;
-        temp = startPoint;  // 暂存
+    private Transform transform;
+    protected override void OnStart()
+    {
+        transform = context.transform;
+        e_ctl = transform.GetComponent<EnemyCh1>();
         result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint[endNum]);
     }
 
@@ -42,12 +41,11 @@ public class MoveOnce : ActionNode
     protected override State OnUpdate()
     {
         // Debug.Log(blackboard.detectPlayer + " in Move");
-        var t = context.transform;
         if (blackboard.detectPlayer)
         {
             return State.Failure;
         }
-        if (EnemyMgr.GetInstance().DetectPlayer(precision, angle, radius, t))
+        if (EnemyMgr.GetInstance().DetectPlayer(precision, angle, radius, transform))
         {
             blackboard.detectPlayer = true;
             return State.Failure;
@@ -61,7 +59,6 @@ public class MoveOnce : ActionNode
     /// </summary>
     void MoveGameObject()
     {
-        var transform = context.transform;
         Vector3 NextPos = new Vector3(result[count].y, 0, result[count].x);
         // 一般通行
         if(transform.position == NextPos){
@@ -89,9 +86,6 @@ public class MoveOnce : ActionNode
             transform.position = Vector3.MoveTowards(transform.position, NextPos, speed * Time.deltaTime);
         }
         
-        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
-        materials[0] = Resources.Load("normal") as Material;
-        materials[1] = Resources.Load("normal_b") as Material;
-        attack.GetComponent<MeshRenderer>().materials = materials;
+        e_ctl.ChangeNormalColor();
     }
 }

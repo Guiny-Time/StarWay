@@ -107,10 +107,8 @@
      <Folder Include="Assets\Scripts" />
      <None Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\UIBuilder\BehaviourTreeEditor.uxml" />
      <Folder Include="Assets\Resources\Prefab" />
-     <Folder Include="Assets\Mirza Fire Asset\Materials" />
      <Folder Include="Assets\Scripts\Save" />
      <Folder Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts" />
-     <Folder Include="Assets\Mirza Fire Asset\Textures" />
      <Folder Include="Assets\Art\Models" />
      <Folder Include="Assets\Art\007_Heavy Storm" />
      <Folder Include="Assets\Scripts\Base" />
@@ -136,7 +134,6 @@
      <None Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\UIBuilder\NodeView.uxml" />
      <Folder Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\UIBuilder" />
      <Folder Include="Assets\Scenes\Open" />
-     <Folder Include="Assets\Mirza Fire Asset" />
      <Folder Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\ScriptTemplates" />
      <Folder Include="Assets\Scripts\Block" />
      <Folder Include="Assets\Resources" />

@@ -12,6 +12,8 @@ public class Alumb : ActionNode
     public Animator anim;
     private Vector2 temp;
     
+    public EnemyCh1 e_ctl;
+    
     // 追击参数
     public float speed;
     private bool magicTrigger;
@@ -34,6 +36,7 @@ public class Alumb : ActionNode
     protected override void OnStart()
     {
         transform = context.transform;
+        e_ctl = transform.GetComponent<EnemyCh1>();
         anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         count = 0;
         /*if (result == null)
@@ -68,7 +71,7 @@ public class Alumb : ActionNode
         if (EnemyMgr.GetInstance().DetectPlayer(precision,angle,radius,transform))
         {
             blackboard.detectPlayer = true;
-            ChangeColor();
+            e_ctl.ChangeFindColor();
             return State.Failure;
         }
         
@@ -128,7 +131,7 @@ public class Alumb : ActionNode
         }
         count = 0;
         anim.Play("EneCh1Run");
-        ChangeColor();
+        e_ctl.ChangeFindColor();
         // return State.Running;
     }
 
@@ -153,15 +156,5 @@ public class Alumb : ActionNode
             transform.position = Vector3.MoveTowards(transform.position, NextPos, speed * Time.deltaTime);
         }
 
-    }
-    
-    public void ChangeColor()
-    {
-        var transform = context.transform;
-        GameObject attack = transform.GetChild(transform.childCount - 1).gameObject;
-        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
-        materials[0] = Resources.Load("find") as Material;
-        materials[1] = Resources.Load("find_b") as Material;
-        attack.GetComponent<MeshRenderer>().materials = materials;
     }
 }

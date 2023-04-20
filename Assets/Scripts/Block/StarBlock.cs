@@ -7,17 +7,7 @@ public class StarBlock : MonoBehaviour
 {
     public Material magicMat;   // 魔法条
     public UnityEvent e;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     //触发开始 只调用一次
     public void OnTriggerEnter(Collider collider){
         print(collider.name);
@@ -41,6 +31,11 @@ public class StarBlock : MonoBehaviour
     /// <param name="birdge"></param>
     public void RedStar(GameObject birdge)
     {
-        // birdge.GetComponent<Animator>().Play("Fix");
+        Vector3 pos = birdge.transform.position;
+        BlockCtl bCtl = birdge.GetComponent<BlockCtl>();
+        birdge.GetComponent<Animator>().Play("fix");
+        // 修改状态为可通行
+        AStarMgr.GetInstance().ChangeBlockState(pos.z, pos.x, 1);
+        bCtl.SetState(1);
     }
 }

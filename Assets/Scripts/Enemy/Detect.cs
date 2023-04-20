@@ -12,15 +12,20 @@ public class Detect : ActionNode
     // 半径
     public float radius;    //2.5
     public Animator anim;
+    
+    public EnemyCh1 e_ctl;
+    private Transform transform;
+    
     protected override void OnStart()
     {
-        var transform = context.transform;
+        transform = context.transform;
+        e_ctl = transform.GetComponent<EnemyCh1>();
         anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     protected override void OnStop()
     {
-        ChangeColor();
+        e_ctl.ChangeFindColor();
         anim.Play("EneCh1Run");
     }
 
@@ -51,7 +56,6 @@ public class Detect : ActionNode
     public bool GenerateRay(int angle)
     {
         RaycastHit hit;
-        var transform = context.transform;
         if (Physics.Raycast(transform.position, Vector3.Normalize(Quaternion.Euler(0, angle, 0) * transform.forward), out hit,
                 radius) && hit.collider.CompareTag("Player"))
         {
@@ -59,16 +63,5 @@ public class Detect : ActionNode
         }
 
         return false;
-
-    }
-
-    public void ChangeColor()
-    {
-        var transform = context.transform;
-        GameObject attack = transform.GetChild(transform.childCount - 1).gameObject;
-        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
-        materials[0] = Resources.Load("find") as Material;
-        materials[1] = Resources.Load("find_b") as Material;
-        attack.GetComponent<MeshRenderer>().materials = materials;
     }
 }

@@ -9,6 +9,9 @@ public class Chase : ActionNode
     public Vector2 startPoint;
     public Vector2 endPoint;
     public Animator anim;
+    
+    public EnemyCh1 e_ctl;
+    
     private Vector2 temp;
     // 速度
     public float speed;
@@ -26,22 +29,25 @@ public class Chase : ActionNode
     private Transform transform;
     protected override void OnStart() {
         transform = context.transform;
+        
+        e_ctl = transform.GetComponent<EnemyCh1>();
         player = GameObject.FindWithTag("Player");
         playerAnim = player.GetComponentInParent<Animator>();
-        
         anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         endPoint = new Vector2(Mathf.Round(player.transform.position.z), Mathf.Round(player.transform.position.x));
         result = AStarMgr.GetInstance().FindPathRect(startPoint, endPoint);
+        
         count = 1;
         timer = 0;
-        ChangeColorRed(transform);
+        e_ctl.ChangeFindColor();
     }
 
     protected override void OnStop()
     {
         blackboard.detectPlayer = false;
-        ChangeColorNormal(transform);
+        e_ctl.ChangeNormalColor();
     }
 
     protected override State OnUpdate() {
@@ -109,24 +115,5 @@ public class Chase : ActionNode
             transform.rotation = Quaternion.LookRotation(NextPos - transform.position, Vector3.up); //转向
             transform.position = Vector3.MoveTowards(transform.position, NextPos, speed * Time.deltaTime);
         }
-
-    }
-    
-    public void ChangeColorRed(Transform transform)
-    {
-        GameObject attack = transform.GetChild(transform.childCount - 1).gameObject;
-        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
-        materials[0] = Resources.Load("find") as Material;
-        materials[1] = Resources.Load("find_b") as Material;
-        attack.GetComponent<MeshRenderer>().materials = materials;
-    }
-    
-    public void ChangeColorNormal(Transform transform)
-    {
-        GameObject attack = transform.GetChild(transform.childCount - 1).gameObject;
-        Material[] materials = attack.GetComponent<MeshRenderer>().materials;
-        materials[0] = Resources.Load("normal") as Material;
-        materials[1] = Resources.Load("normal_b") as Material;
-        attack.GetComponent<MeshRenderer>().materials = materials;
     }
 }
