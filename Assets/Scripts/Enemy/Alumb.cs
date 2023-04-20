@@ -92,7 +92,7 @@ public class Alumb : ActionNode
     /// 根据魔法传来的block位置的state的不同，设置不同的执行顺序（改状态-寻路或寻路-改状态），返回路径result
     /// </summary>
     /// <param name="o"></param>
-    public State EventTrig(Transform o)
+    public void EventTrig(Transform o)
     {
         magicTrigger = true;
         transform = context.transform;
@@ -107,10 +107,11 @@ public class Alumb : ActionNode
                 Debug.Log("dead road.");
                 // 切换状态
                 count = 0;
+                BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 1);
                 magicTrigger = false;
-                return State.Failure;
+                // return State.Failure;
             }
-            BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 1);
+            // BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 1);
             blackboard.fuck = false;
         }
         else
@@ -122,13 +123,13 @@ public class Alumb : ActionNode
                 Debug.Log("dead road.");
                 count = 0;
                 magicTrigger = false;
-                return State.Failure;
+                // return State.Failure;
             }
         }
         count = 0;
         anim.Play("EneCh1Run");
         ChangeColor();
-        return State.Running;
+        // return State.Running;
     }
 
     /// <summary>

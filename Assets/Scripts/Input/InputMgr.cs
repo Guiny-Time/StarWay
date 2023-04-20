@@ -159,7 +159,7 @@ public class InputMgr : SingletonMono<InputMgr>
                 BlockMgr.GetInstance().UseGravityMagic(block, blockState);
                 bCtl.SetState(1);
             }
-            else
+            else  // 原本可通行
             {
                 e.Invoke(block.name);
                 bCtl.SetState(0);
