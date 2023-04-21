@@ -35,7 +35,16 @@ public class StarBlock : MonoBehaviour
         BlockCtl bCtl = birdge.GetComponent<BlockCtl>();
         birdge.GetComponent<Animator>().Play("fix");
         // 修改状态为可通行
-        AStarMgr.GetInstance().ChangeBlockState(pos.z, pos.x, 1);
+        Debug.Log("修改断桥状态");
+        BlockMgr.GetInstance().UseGravityMagic(birdge, 0);
         bCtl.SetState(1);
+    }
+
+    /// <summary>
+    /// 蓝色星光事件：陨星术，砸死一个enemy
+    /// </summary>
+    public void BlueStar()
+    {
+        // 
     }
 }
