@@ -56,7 +56,8 @@ public class EnemyCh1 : MonoBehaviour
     /// <param name="s"></param>
     public void Alumb(string s)
     {
-        bt.tree.treeState = Node.State.Success;
+        print("5、触发UnityEvent in EnemyCh1.cs");
+        bt.tree.treeState = Node.State.Failure;
         bt.tree.blackboard.inBack = true;
         bt.tree.blackboard.alumbObj = GameObject.Find(s).transform;
         if (AStarMgr.GetInstance().GetBlockState(bt.tree.blackboard.alumbObj.position.x, bt.tree.blackboard.alumbObj.position.z) == 1)

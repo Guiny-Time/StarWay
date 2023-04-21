@@ -21,7 +21,7 @@ public class MoveOnce : ActionNode
     public float radius;    //2.5
 
     // 路径
-    private List<AStarNode> result = new List<AStarNode>();
+    private List<AStarNode> result;
 
     private int endNum = 0; // 第几个终点
     // 路径计数

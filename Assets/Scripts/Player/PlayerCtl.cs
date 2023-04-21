@@ -41,7 +41,7 @@ public class PlayerCtl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputMgr.GetInstance().UIListener(result);
+        InputMgr.GetInstance().UIListener();
         if (!UICtl.GetInstance().GetPanelState() && !(InputMgr.GetInstance().GetMagicState() && !InputMgr.GetInstance().DetermineDistance()))
         {
             // print("haha");

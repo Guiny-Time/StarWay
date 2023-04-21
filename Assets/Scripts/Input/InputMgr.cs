@@ -14,8 +14,7 @@ public class InputMgr : SingletonMono<InputMgr>
     public Material magicMat;
     public LineRenderer lr;
     public UnityEvent<String> e;
-
-    private Vector3 mousePosition;
+    
     private Ray ray;
     private RaycastHit hit;
     private GameObject mapCollider;
@@ -26,7 +25,6 @@ public class InputMgr : SingletonMono<InputMgr>
     private Vector2 pl_p;   // player position
     private Vector2 bl_p;   // block position
     private float d;    // distance between p and b
-    private Vector2[] forbidPoints; // forbidden points(can't use gravity magic)
 
     private void OnEnable()
     {
@@ -44,10 +42,9 @@ public class InputMgr : SingletonMono<InputMgr>
     private void Start()
     {
         d = PlayerMgr.GetInstance().GetArea() * Mathf.Sqrt(2);
-        forbidPoints = PlayerMgr.GetInstance().GetForbidPoints();
     }
 
-    public void UIListener(List<AStarNode> result)
+    public void UIListener()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -82,7 +79,7 @@ public class InputMgr : SingletonMono<InputMgr>
         {
             if (!inMagic)
             {
-                print("开始使用重力魔法");
+                print("1、开始使用重力魔法 in InputMgr.cs");
                 lr.positionCount = 0;
                 GravityMagic();
             }
@@ -122,6 +119,10 @@ public class InputMgr : SingletonMono<InputMgr>
         return true;
     }
 
+    /// <summary>
+    /// 获取当前player是否处于施法状态
+    /// </summary>
+    /// <returns></returns>
     public bool GetMagicState()
     {
         return inMagic;
@@ -132,35 +133,43 @@ public class InputMgr : SingletonMono<InputMgr>
         
     }
 
+    /// <summary>
+    /// 施法状态下的输入控制
+    /// </summary>
     public void InMagic()
     {
+        // 右键退出施法状态
         if (Input.GetMouseButtonDown(1))
         {
             print("退出施法状态");
             inMagic = false;
         }
-        
-        GameObject block = GetCurrentMouse();
+
+        // 超出距离不允许施法
         if (!DetermineDistance())
         {
             return;
         }
+        
+        // 合法条件，开始施法
         if(Input.GetMouseButtonDown(0))
         {
-            block = GetCurrentMouse();
+            GameObject block = GetCurrentMouse();   // 施法对象
             // if(Vector3.Distance(block,))
-            print("对该方块施展重力魔法：" + block.name);
+            print("3、对该方块施展重力魔法：" + block.name + "in InputMgr.cs");
             BlockCtl bCtl = block.GetComponent<BlockCtl>();
             int blockState = bCtl.GetState();
             
-            if (blockState == 0)    //原本不可通行
+            if (blockState == 0)    // 原本不可通行,施法后变成可通行方块
             {
+                print("4、原本不可通行,施法后变成可通行方块 in InputMgr.cs");
                 e.Invoke(block.name);
                 BlockMgr.GetInstance().UseGravityMagic(block, blockState);
                 bCtl.SetState(1);
             }
-            else  // 原本可通行
+            else  // 原本可通行,施法后变成不可通行方块
             {
+                print("4、原本可通行,施法后变成不可通行方块 in InputMgr.cs");
                 e.Invoke(block.name);
                 bCtl.SetState(0);
             }
@@ -179,7 +188,6 @@ public class InputMgr : SingletonMono<InputMgr>
         int layerMask = 1 << 3;
         if(Physics.Raycast(ray, out hitData, 1000, layerMask))
         {
-            mousePosition = hitData.point;
             mapCollider = hitData.collider.transform.gameObject;
         }
         return mapCollider;
@@ -191,7 +199,7 @@ public class InputMgr : SingletonMono<InputMgr>
     void GravityMagic()
     {
         inMagic = true;
-        print("Gravity Magic");
+        print("2、Gravity Magic in InputMgr.cs");
         chooseObj = GetCurrentMouse();
         // clear highlight
         if (highlightBlocks != null)

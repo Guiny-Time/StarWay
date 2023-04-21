@@ -67,7 +67,7 @@ public class MoveBack : ActionNode
 
         if (blackboard.inBack)
         {
-            return State.Success;
+            return State.Failure;
         }
 
         return State.Failure;

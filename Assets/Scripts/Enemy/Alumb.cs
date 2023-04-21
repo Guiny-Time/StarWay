@@ -97,13 +97,15 @@ public class Alumb : ActionNode
     /// <param name="o"></param>
     public void EventTrig(Transform o)
     {
+        Debug.Log("6、触发寻路 in Alumb.cs");
         magicTrigger = true;
         transform = context.transform;
         startPoint = new Vector2(Mathf.Round(transform.position.z), Mathf.Round(transform.position.x));
         endPoint = new Vector2(o.position.z, o.position.x);
-        if (blackboard.fuck)    //之前是1，很可能被改成0了
+        if (blackboard.fuck)    //之前是1（可通行），很可能被改成0（不可通行）了
         {
-            BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 0);  // 先设成1
+            Debug.Log("7、之前是1（可通行）in Alumb.cs");
+            BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 0);  // 先设成1（可通行）
             result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
             if (result == null)
             {
@@ -114,11 +116,15 @@ public class Alumb : ActionNode
                 magicTrigger = false;
                 // return State.Failure;
             }
-            // BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 1);
+            else
+            {
+                BlockMgr.GetInstance().UseGravityMagic(blackboard.alumbObj.gameObject, 1);  // 改回0
+            }
             blackboard.fuck = false;
         }
         else
         {
+            Debug.Log("7、之前是0（不可通行）in Alumb.cs");
             result = AStarMgr.GetInstance().FindPathRect(startPoint,endPoint);
             if (result == null)
             {
