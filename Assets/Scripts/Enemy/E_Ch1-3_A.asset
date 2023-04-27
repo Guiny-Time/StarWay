@@ -26,8 +26,8 @@ MonoBehaviour:
     fuck: 0
   description: 
   drawGizmos: 0
-  startPoint: {x: 5, y: 8}
-  endPoint: {x: 2, y: 5}
+  startPoint: {x: 4, y: 14}
+  endPoint: {x: 0, y: 14}
   e_ctl: {fileID: 0}
   speed: 1
   precision: 4
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: E_Ch2_A
+  m_Name: E_Ch1-3_A
   m_EditorClassIdentifier: 
   rootNode: {fileID: -2466464588330516849}
   treeState: 0

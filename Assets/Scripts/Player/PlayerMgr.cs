@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMgr : BaseManager<PlayerMgr>
 {
     private int magic;
-    private int speed;
+    private float speed;
     private int area;
     private Vector2[] forbidPoints;
 
@@ -14,7 +14,7 @@ public class PlayerMgr : BaseManager<PlayerMgr>
         this.magic = magic;
     }
     
-    public void SetSpeed(int speed)
+    public void SetSpeed(float speed)
     {
         this.speed = speed;
     }
@@ -34,7 +34,7 @@ public class PlayerMgr : BaseManager<PlayerMgr>
         return magic;
     }
 
-    public int GetSpeed()
+    public float GetSpeed()
     {
         return speed;
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: dcd1b114a961e6640bd8715c9cd5cf05
-  position: {x: 308.06598, y: 361.6}
+  position: {x: 267.77283, y: 336.8}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -28,11 +28,11 @@ MonoBehaviour:
   drawGizmos: 0
   endPoint: {x: 6, y: 5}
   speed: 1.5
-  attack: {fileID: 0}
   precision: 4
   angle: 45
   radius: 2.5
   anim: {fileID: 0}
+  e_ctl: {fileID: 0}
 --- !u!114 &-4744259994293432426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a30ea6c0659cc4846a1fd9e3d93cfdf6
-  position: {x: -115.59994, y: 361.59998}
+  position: {x: -101.2079, y: 336.8}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -61,11 +61,11 @@ MonoBehaviour:
   drawGizmos: 0
   endPoint: {x: 6, y: 5}
   speed: 1.5
-  attack: {fileID: 0}
   precision: 4
   angle: 45
   radius: 2.5
   anim: {fileID: 0}
+  e_ctl: {fileID: 0}
 --- !u!114 &-3642766428777185881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a0f89cdae0b82164092241775365780f
-  position: {x: -266.1232, y: 361.6}
+  position: {x: -252.40791, y: 336.8}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   startPoint: {x: 0, y: 0}
   endPoint: {x: 0, y: 0}
   anim: {fileID: 0}
+  e_ctl: {fileID: 0}
   speed: 1.5
   precision: 4
   angle: 45
@@ -114,7 +115,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: bb8b20cbe36ffcd4b83c0071f0c3218c
-  position: {x: 8, y: -267.64}
+  position: {x: 8.000045, y: -192.85498}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -141,7 +142,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f5bb381a8f2521f44a3e258336fcdd6a
-  position: {x: 158.4001, y: 361.59998}
+  position: {x: 118.17291, y: 336.8}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -155,6 +156,7 @@ MonoBehaviour:
   startPoint: {x: 0, y: 0}
   endPoint: {x: 0, y: 0}
   anim: {fileID: 0}
+  e_ctl: {fileID: 0}
   speed: 1.5
   radius: 2.5
 --- !u!114 &-1381181118382598817
@@ -172,7 +174,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a167b6becc5241e4aae4f26148374a15
-  position: {x: -190.79999, y: 187.20001}
+  position: {x: -176.40791, y: 162.39998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -201,7 +203,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b40a7b177e8c5c4438e44af2fc65a1da
-  position: {x: 8, y: -143.4}
+  position: {x: 8.000045, y: -92.85497}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -263,7 +265,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4288a394cfb23d844840907b96122d4d
-  position: {x: 233.66595, y: 187.20003}
+  position: {x: 193.37282, y: 162.39998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -322,7 +324,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b24d8101d1009094abe40ceb24a1b58e
-  position: {x: 8.000093, y: 211.19997}
+  position: {x: 8.000045, y: 162.39998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     inAlumb: 0
@@ -335,9 +337,8 @@ MonoBehaviour:
   drawGizmos: 0
   startPoint: {x: 6, y: 5}
   endPoint: {x: 6, y: 11}
-  anim: {fileID: 0}
+  e_ctl: {fileID: 0}
   speed: 1
-  attack: {fileID: 0}
   precision: 8
   angle: 45
   radius: 2.5

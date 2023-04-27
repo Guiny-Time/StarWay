@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class UICtl : SingletonMono<UICtl>
 {
@@ -11,7 +12,6 @@ public class UICtl : SingletonMono<UICtl>
     public AudioSource soundEffect;
     public GameObject[] panelElement;
     [SerializeReference] private GameObject continueGame;   // 加载存档按钮
-    [SerializeReference] private GameObject exitConfirm;
     [SerializeReference] private GameObject volumeControl;
     [SerializeReference] private Animator UIAnim;
     
@@ -69,6 +69,9 @@ public class UICtl : SingletonMono<UICtl>
         return isOpen;
     }
     
+    /// <summary>
+    /// 在关卡中打开设置面板，暂停游戏时间
+    /// </summary>
     public void ShowPanel()
     {
         // 底层面板打开时，按esc关闭
@@ -84,16 +87,53 @@ public class UICtl : SingletonMono<UICtl>
         else
         {
             Time.timeScale = 0;
+            print(panelElement[0].gameObject.name);
+            PanelList.Push(panelElement[0]);
+            PanelList.Peek().SetActive(true);
+            isOpen = true;
+        }
+    }
+    
+    /// <summary>
+    /// 在初始界面中打开设置面板，不需要暂停时间
+    /// </summary>
+    public void ShowPanelWithoutChangeTime()
+    {
+        // 底层面板打开时，按esc关闭
+        if (isOpen)
+        {
+            PanelList.Peek().SetActive(false);
+            PanelList.Pop();
+            if(PanelList.Count == 0)
+                isOpen = false;
+        }
+        // 底层面板关闭时，按esc打开
+        else
+        {
+            print(panelElement[0].gameObject.name);
             PanelList.Push(panelElement[0]);
             PanelList.Peek().SetActive(true);
             isOpen = true;
         }
     }
 
-    // 展示退出面板面板
-    public void ShowExitConfirmPanel()
+    /// <summary>
+    /// 展示第二层面板
+    /// </summary>
+    public void ShowSecondPanel()
     {
-        PanelList.Push(exitConfirm);
+        PanelList.Peek().SetActive(false);
+        PanelList.Push(panelElement[1]);
+        PanelList.Peek().SetActive(true);
+    }
+
+    /// <summary>
+    /// 关闭第二层面板
+    /// </summary>
+    public void CloseSecondPanel()
+    {
+        PanelList.Peek().SetActive(false);
+        PanelList.Pop();
         PanelList.Peek().SetActive(true);
     }
 
@@ -178,6 +218,15 @@ public class UICtl : SingletonMono<UICtl>
         PlayButtonClick();
         Invoke("LoadNewGame",1.5f);
     }
+
+    /// <summary>
+    /// 打开项目的Github页面
+    /// </summary>
+    public void AboutProject()
+    {
+        Application.OpenURL("https://github.com/Guiny-Time/StarWay");
+    }
+    
     /// <summary>
     /// hover音效
     /// </summary>

@@ -17,6 +17,15 @@ public class StarBlock : MonoBehaviour
     }
 
     /// <summary>
+    /// 黄色星光事件，增加0.25速度
+    /// </summary>
+    public void YellowStar()
+    {
+        float currentSpeed = PlayerMgr.GetInstance().GetSpeed();
+        PlayerMgr.GetInstance().SetSpeed(currentSpeed + 0.25f);
+    }
+
+    /// <summary>
     /// 白色星光事件：回满魔法槽
     /// </summary>
     public void WhiteStar()

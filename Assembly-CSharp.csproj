@@ -46,7 +46,6 @@
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Actions\MoveToPosition.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Actions\Breakpoint.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCtl.cs" />
-     <Compile Include="Assets\Scripts\Base\SingletonAutoMono.cs" />
      <Compile Include="Assets\Scripts\UISys\MusicMgr.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Composites\InterruptSelector.cs" />
      <Compile Include="Assets\Scripts\Base\MonoMgr.cs" />
@@ -83,7 +82,6 @@
      <Compile Include="Assets\Scripts\Base\BaseManager.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Actions\RandomFailure.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Succeed.cs" />
-     <Compile Include="Assets\Scripts\Base\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Timeout.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Actions\Wait.cs" />
      <Compile Include="Assets\Scripts\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Repeat.cs" />
