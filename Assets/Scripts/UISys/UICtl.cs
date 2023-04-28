@@ -3,21 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class UICtl : SingletonMono<UICtl>
 {
     public AudioSource bgm;
     public AudioSource soundEffect;
     public GameObject[] panelElement;
+    public UnityEvent bgmInit;
+    public UnityEvent soundInit;
     [SerializeReference] private GameObject continueGame;   // 加载存档按钮
     [SerializeReference] private GameObject volumeControl;
     [SerializeReference] private Animator UIAnim;
     
     private TMP_Text T_ChapterID;
     private TMP_Text T_ChapterName;
-    
+
     Stack<GameObject> PanelList = new Stack<GameObject>();
     
     private GameObject[] audioSource;
@@ -27,14 +31,28 @@ public class UICtl : SingletonMono<UICtl>
     private void OnEnable()
     {
         UIAnim = this.gameObject.GetComponent<Animator>();
+        bgm = GameObject.FindWithTag("Music").GetComponent<AudioSource>();
+        soundEffect = GameObject.FindWithTag("Sound").GetComponent<AudioSource>();
         T_ChapterID = GameObject.Find("T_ChapterID").GetComponent<TMP_Text>();
         T_ChapterName = GameObject.Find("T_ChapterName").GetComponent<TMP_Text>();
-        bgm = GameObject.FindWithTag("Music").GetComponent<AudioSource>();
-        bgm.volume = 0f;
     }
 
     public void Start()
     {
+        bgmInit.Invoke();
+        soundInit.Invoke();
+        // init volume
+        try
+        {
+            bgm.volume = PlayerPrefs.GetFloat("bgm");
+            soundEffect.volume = PlayerPrefs.GetFloat("audio");
+        }
+        catch (Exception e)
+        {
+            bgm.volume = 0.8f;
+            soundEffect.volume = 0.8f;
+        }
+
         if (continueGame)
         {
             if (SaveMgr.GetInstance().GetProgress()!="Chap0-0")
@@ -53,14 +71,6 @@ public class UICtl : SingletonMono<UICtl>
         {
             T_ChapterID.text = SaveMgr.GetInstance().GetProgress();
             T_ChapterName.text = PlayerPrefs.GetString(SaveMgr.GetInstance().GetProgress());
-        }
-    }
-
-    private void Update()
-    {
-        if (bgm.volume < 0.9f)
-        {
-            bgm.volume = Mathf.Lerp(bgm.volume, 1, 0.005f);
         }
     }
 
@@ -240,6 +250,37 @@ public class UICtl : SingletonMono<UICtl>
     {
         soundEffect.clip = (AudioClip)Resources.Load("Music/button_click");
         soundEffect.Play();
+    }
+
+    public void InitBgm(Slider s)
+    {
+        s.value = PlayerPrefs.GetFloat("bgm");
+    }
+
+    public void InitAudio(Slider s)
+    {
+        s.value = PlayerPrefs.GetFloat("audio");
+    }
+
+    /// <summary>
+    /// 设置bgm音量
+    /// </summary>
+    /// <param name="s"></param>
+    public void ChangeBgmVolum(Slider s)
+    {
+        // bgm.volume = Mathf.Lerp(bgm.volume, s.value, 0.005f);
+        bgm.volume = s.value;
+        MusicMgr.GetInstance().SetBgmVol(s.value);
+    }
+
+    /// <summary>
+    /// 设置音效音量
+    /// </summary>
+    /// <param name="s"></param>
+    public void ChangeEffectVolum(Slider s)
+    {
+        soundEffect.volume = s.value;
+        MusicMgr.GetInstance().SetEffectVol(s.value);
     }
 
     //静音

@@ -332,7 +332,19 @@ MonoBehaviour:
   m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 824264734}
+        m_TargetAssemblyTypeName: UICtl, Assembly-CSharp
+        m_MethodName: ChangeBgmVolum
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 185357828}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &186708154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1956,36 @@ MonoBehaviour:
   soundEffect: {fileID: 332921822}
   panelElement:
   - {fileID: 88578930}
+  bgmInit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 824264734}
+        m_TargetAssemblyTypeName: UICtl, Assembly-CSharp
+        m_MethodName: InitBgm
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 185357828}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  soundInit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 824264734}
+        m_TargetAssemblyTypeName: UICtl, Assembly-CSharp
+        m_MethodName: InitAudio
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2051717603}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   continueGame: {fileID: 933394531}
   volumeControl: {fileID: 0}
   UIAnim: {fileID: 0}
@@ -4677,10 +4719,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.938
+  m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 824264734}
+        m_TargetAssemblyTypeName: UICtl, Assembly-CSharp
+        m_MethodName: ChangeEffectVolum
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2051717603}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2106723829
 GameObject:
   m_ObjectHideFlags: 0

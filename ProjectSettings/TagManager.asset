@@ -9,6 +9,7 @@ TagManager:
   - Music
   - pause
   - AnimCanvas
+  - Sound
   layers:
   - Default
   - TransparentFX

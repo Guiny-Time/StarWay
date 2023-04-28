@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class MusicMgr : SingletonMono<MusicMgr>
+public class MusicMgr : BaseManager<MusicMgr>
 {
     //唯一的背景音乐组件
     private static AudioSource bkMusic = null;
@@ -12,27 +12,8 @@ public class MusicMgr : SingletonMono<MusicMgr>
     private float bkValue = 1;
     //音效列表
     private List<AudioSource> soundList = new List<AudioSource>();
-
-    public MusicMgr()
-    {
-        MonoMgr.GetInstance().AddUpdateListener(Update);
-    }
-
-    private void Update()
-    {
-        for( int i = soundList.Count - 1; i >=0; --i )
-        {
-            if(soundList[i]==null||!soundList[i].isPlaying)
-            {
-                GameObject.Destroy(soundList[i]);
-                soundList.RemoveAt(i);
-            }
-        }
-    }
-    public void SetBKObject(AudioSource a){
-        if(bkMusic==null)
-            bkMusic = a;
-    }
+    private float musicVolume = 0.8f;
+    private float effectVolome = 0.8f;
 
     /// <summary>
     /// 播放背景音乐
@@ -53,22 +34,25 @@ public class MusicMgr : SingletonMono<MusicMgr>
         bkMusic.Pause();
     }
 
-    /// <summary>
-    /// 改变背景音乐音量大小
-    /// </summary>
-    /// <param name="v"></param>
-    public void ChangeBKValue(float v)
+    public void SetBgmVol(float v)
     {
-        bkValue = v;
-        if (bkMusic == null)
-            return;
-        bkMusic.volume = bkValue;
+        musicVolume = v;
+        PlayerPrefs.SetFloat("bgm",v);
     }
 
-    /// <summary>
-    /// 切换背景音乐
-    /// </summary>
-    public void ChangeBkMusic(string fileName){
-        bkMusic.clip = Resources.Load<AudioClip>(fileName);
+    public void SetEffectVol(float v)
+    {
+        effectVolome = v;
+        PlayerPrefs.SetFloat("audio",v);
+    }
+
+    public float GetBgmVol()
+    {
+        return musicVolume;
+    }
+
+    public float GetEffectVol()
+    {
+        return effectVolome;
     }
 }
