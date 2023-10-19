@@ -31,7 +31,6 @@ public class AStarMgr : BaseManager<AStarMgr>
     /// <param name="h"></param>
     public void InitMapInfo(mapInfoWidth[] data,int w ,int h) 
     {
-        //记录宽高 范围
         this._mapW = w;
         this._mapH = h;
         nodes = new AStarNode[w, h];
